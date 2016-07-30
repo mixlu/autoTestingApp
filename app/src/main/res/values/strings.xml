@@ -3,6 +3,7 @@
 
     <!-- Strings related to login -->
     <string name="prompt_username">用户名</string>
+    <string name="prompt_useremail">登陆邮箱</string>
     <string name="prompt_password">密码</string>
     <string name="prompt_password_confirm">确认密码</string>
     <string name="action_sign_in">登录</string>
@@ -36,14 +37,23 @@
     <string name="seats_number">载质量（座位）</string>
     <string name="register_date">登记日期</string>
     <string name="state">车辆状况</string>
-    <string name="headlight">前照灯制</string>
-    <string name="weight">基准质量（kg）</string>
+    <string name="headlight_type">前照灯制</string>
+    <string name="base_weight">基准质量（kg）</string>
+    <string name="whole_weight">总质量（kg）</string>
     <string name="fuel_type">燃油类型</string>
-    <string name="brake_system">气/液压制动</string>
+    <string name="brake_system_type">气/液压制动</string>
     <string name="drive_wheel">驱动形式</string>
     <string name="emission_inspector">废气检验员</string>
     <string name="exterior_inspector">外检员</string>
     <string name="commander">引车员</string>
+    <string name="shaft1">一轴</string>
+    <string name="shaft2">二轴</string>
+    <string name="shaft3">三轴</string>
+    <string name="shaft4">四轴</string>
+    <string name="manual_brake">手制动</string>
+    <string name="sound_level">声级</string>
+    <string name="emission">尾气</string>
+    <string name="headlight">前照灯</string>
     <string name="plate_prefix">车牌号码前缀</string>
     <string name="inspection_organization">检测单位</string>
     <string name="select_hardware">选择已有设备</string>
