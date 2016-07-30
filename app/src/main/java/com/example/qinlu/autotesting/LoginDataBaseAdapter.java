@@ -16,7 +16,7 @@ public class LoginDataBaseAdapter
     // TODO: Create public field for each column in your table.
     // SQL Statement to create a new database.
     static final String DATABASE_CREATE = "create table " + TABLE_USER +
-            "( " +"ID"+" integer primary key autoincrement,"+ "USERNAME  text,PASSWORD text); ";
+            "( " +"ID"+" integer primary key autoincrement,"+ "USEREMAIL text NOT NULL, USERNAME text NOT NULL, PASSWORD text NOT NULL);";
     // Variable to hold the database instance
     public  SQLiteDatabase db;
     // Context of the application using the database.
@@ -43,10 +43,10 @@ public class LoginDataBaseAdapter
         return db;
     }
 
-    public void insertEntry(String userName,String password)
+    public void insertEntry(String userEmail, String userName,String password)
     {
         ContentValues newValues = new ContentValues();
-        // Assign values for each row.
+        newValues.put("USEREMAIL", userEmail);
         newValues.put("USERNAME", userName);
         newValues.put("PASSWORD",password);
 
@@ -62,9 +62,9 @@ public class LoginDataBaseAdapter
         // Toast.makeText(context, "Number fo Entry Deleted Successfully : "+numberOFEntriesDeleted, Toast.LENGTH_LONG).show();
         return numberOFEntriesDeleted;
     }
-    public String getPwd(String userName)
+    public String getPwd(String userEmail)
     {
-        Cursor cursor=db.query(TABLE_USER, null, " USERNAME=?", new String[]{userName}, null, null, null);
+        Cursor cursor=db.query(TABLE_USER, null, " USEREMAIL=?", new String[]{userEmail}, null, null, null);
         if(cursor.getCount()<1) // UserName Not Exist
         {
             cursor.close();
@@ -75,10 +75,10 @@ public class LoginDataBaseAdapter
         cursor.close();
         return password;
     }
-    public Boolean isUserExist(String userName)
+    public Boolean isUserExist(String userEmail)
     {
-        Cursor cursor=db.query(TABLE_USER, null, " USERNAME=?", new String[]{userName}, null, null, null);
-        // UserName Not Exist
+        Cursor cursor=db.query(TABLE_USER, null, " USEREMAIL=?", new String[]{userEmail}, null, null, null);
+        // User Not Exist
         if(cursor.getCount()<1)
         {
             cursor.close();
@@ -86,7 +86,7 @@ public class LoginDataBaseAdapter
         }
         return true;
     }
-    public void updateEntry(String userName,String password)
+    public void updateEntry(String userName, String password)
     {
         // Define the updated row content.
         ContentValues updatedValues = new ContentValues();
