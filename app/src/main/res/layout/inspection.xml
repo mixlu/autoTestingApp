@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:stretchColumns="*"
+    android:background="#ffffff">
+
+    <!-- Row 1 single row -->
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="15">
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/full_inspection"
+                android:id="@+id/button_full_inspection"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear"
+                android:id="@+id/button_clear"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings"
+                android:id="@+id/button_settings"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search"
+                android:id="@+id/button_search"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/report"
+                android:id="@+id/button_report"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/inspect"
+                android:id="@+id/button_inspect"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/close"
+                android:id="@+id/button_close"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:text="@string/inspection_no"
+                android:id="@+id/textView_inspection_no"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="wrap_content">
+            </EditText>
+
+        </LinearLayout>
+
+    </TableRow>
+
+    <!-- Row 2 with -->
+
+
+    <!-- Row 3 with 2 columns -->
+
+
+    <!-- Row 4 with single row -->
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emission_inspector"
+                android:id="@+id/textView_emission_inspector" />
+
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="wrap_content">
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:text="@string/exterior_inspector"
+                android:id="@+id/textView_exterior_inspector" />
+
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="wrap_content">
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:text="@string/commander"
+                android:id="@+id/textView_commander" />
+
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="wrap_content">
+            </EditText>
+
+        </LinearLayout>
+
+    </TableRow>
+
+
+</TableLayout>
