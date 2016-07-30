@@ -12,7 +12,7 @@ import android.widget.Toast;
  * Created by qinlu on 7/28/2016.
  */
 public class SignUpActivity extends Activity{
-    EditText editTextUserName,editTextPassword,editTextConfirmPassword;
+    EditText editTextUserEmail, editTextUserName, editTextPassword, editTextConfirmPassword;
     Button btnCreateAccount;
 
     LoginDataBaseAdapter loginDataBaseAdapter;
@@ -20,11 +20,12 @@ public class SignUpActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
-        // get Instance  of Database Adapter
+        // get Instance of Database Adapter
         loginDataBaseAdapter = new LoginDataBaseAdapter(this);
         loginDataBaseAdapter = loginDataBaseAdapter.open();
 
         // Get References of Views
+        editTextUserEmail = (EditText)findViewById(R.id.editTextUserEmail);
         editTextUserName = (EditText)findViewById(R.id.editTextUserName);
         editTextPassword = (EditText)findViewById(R.id.editTextPassword);
         editTextConfirmPassword = (EditText)findViewById(R.id.editTextConfirmPassword);
@@ -32,6 +33,7 @@ public class SignUpActivity extends Activity{
         btnCreateAccount = (Button)findViewById(R.id.buttonCreateAccount);
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                String userEmail = editTextUserEmail.getText().toString();
                 String userName = editTextUserName.getText().toString();
                 String password = editTextPassword.getText().toString();
                 String confirmPassword = editTextConfirmPassword.getText().toString();
@@ -41,7 +43,7 @@ public class SignUpActivity extends Activity{
                     return;
                 }
                 // check if user already exist
-                if(loginDataBaseAdapter.isUserExist(userName)) {
+                if(loginDataBaseAdapter.isUserExist(userEmail)) {
                     // TODO: Adding account updating logic or password retrieve logic
                     Toast.makeText(getApplicationContext(), "Account already existed", Toast.LENGTH_LONG).show();
                     return;
@@ -52,7 +54,7 @@ public class SignUpActivity extends Activity{
                     return;
                 } else {
                     // Save the Data in Database
-                    loginDataBaseAdapter.insertEntry(userName, password);
+                    loginDataBaseAdapter.insertEntry(userEmail, userName, password);
                     Toast.makeText(getApplicationContext(), "Account Successfully Created ", Toast.LENGTH_LONG).show();
                     // Redirect to login page after register
                     Intent intentLogin = new Intent(getApplicationContext(), LoginActivity.class);
