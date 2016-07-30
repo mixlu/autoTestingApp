@@ -106,8 +106,7 @@
 
             <EditText
                 android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="wrap_content">
+                android:layout_height="wrap_content">
             </EditText>
 
             <TextView
