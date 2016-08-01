@@ -33,7 +33,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.widget.Toast;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -154,6 +153,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * errors are presented and no actual login attempt is made.
      */
     private void attemptLogin() {
+
         if (mAuthTask != null) {
             return;
         }
@@ -339,9 +339,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
-                Toast.makeText(LoginActivity.this, "Congrats: Login successful!", Toast.LENGTH_LONG).show();
+//                Toast.makeText(LoginActivity.this, "Congrats: Login successful!", Toast.LENGTH_LONG).show();
                 finish();
-                // Add direct to new page
+                // Redirect to login page after register
+                Intent intentMainPage = new Intent(getApplicationContext(), SystemSettingActivity.class);
+                startActivity(intentMainPage);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();

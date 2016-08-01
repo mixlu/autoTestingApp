@@ -3,6 +3,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.renderscript.ScriptGroup;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 /**
  * Created by qinlu on 7/28/2016.
  */
-public class SignUpActivity extends Activity{
+public class SignUpActivity extends AppCompatActivity {
     EditText editTextUserEmail, editTextUserName, editTextPassword, editTextConfirmPassword;
     Button btnCreateAccount;
 
@@ -38,19 +39,19 @@ public class SignUpActivity extends Activity{
                 String password = editTextPassword.getText().toString();
                 String confirmPassword = editTextConfirmPassword.getText().toString();
                 // check if any of the fields are empty
-                if(userName.equals("") || password.equals("") || confirmPassword.equals("")) {
-                    Toast.makeText(getApplicationContext(), "Please fill in all inputs", Toast.LENGTH_LONG).show();
+                if(userEmail.equals("") || userName.equals("") || password.equals("") || confirmPassword.equals("")) {
+                    Toast.makeText(getApplicationContext(), "请填入所有必要信息", Toast.LENGTH_LONG).show();
                     return;
                 }
-                // check if user already exist
+                // check if user email already exist
                 if(loginDataBaseAdapter.isUserExist(userEmail)) {
                     // TODO: Adding account updating logic or password retrieve logic
-                    Toast.makeText(getApplicationContext(), "Account already existed", Toast.LENGTH_LONG).show();
+                    editTextUserEmail.setError("此帐户已存在");
                     return;
                 }
                 // check if both password matches
                 if(!password.equals(confirmPassword)) {
-                    Toast.makeText(getApplicationContext(), "Password does not match", Toast.LENGTH_LONG).show();
+                    editTextConfirmPassword.setError("两次输入密码不一致");
                     return;
                 } else {
                     // Save the Data in Database

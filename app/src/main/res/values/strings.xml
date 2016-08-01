@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AutoTest</string>
+    <string name="app_name">车检系统</string>
 
     <!-- Strings related to login -->
     <string name="prompt_username">用户名</string>
@@ -17,7 +17,7 @@
         completions."
     </string>
 
-    <!-- Strings related to inspection page -->
+    <!-- Strings related to activity_main page -->
     <string name="full_inspection">全检</string>
     <string name="clear">清除</string>
     <string name="settings">设置</string>
@@ -79,5 +79,12 @@
     <string name="browse_to_print">浏览打印</string>
     <string name="send_to_printer">直接打印</string>
 
+
+    <!-- Other Strings -->
+    <string name="menu_night_mode">Night mode</string>
+    <string name="menu_night_mode_system">Follow system</string>
+    <string name="menu_night_mode_day">Day (always)</string>
+    <string name="menu_night_mode_night">Night (always)</string>
+    <string name="menu_night_mode_auto">Auto</string>
 </resources>
 
