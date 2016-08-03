@@ -1,8 +1,6 @@
 package com.example.qinlu.autotesting;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +10,7 @@ import android.widget.Toast;
 /**
  * Created by qinlu on 7/28/2016.
  */
-public class SignUpActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     EditText editTextUserEmail, editTextUserName, editTextPassword, editTextConfirmPassword;
     Button btnCreateAccount;
 
@@ -20,7 +18,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register);
+        setContentView(R.layout.page_register);
         // get Instance of Database Adapter
         loginDataBaseAdapter = new LoginDataBaseAdapter(this);
         loginDataBaseAdapter = loginDataBaseAdapter.open();
@@ -57,7 +55,7 @@ public class SignUpActivity extends AppCompatActivity {
                     // Save the Data in Database
                     loginDataBaseAdapter.insertEntry(userEmail, userName, password);
                     Toast.makeText(getApplicationContext(), "Account Successfully Created ", Toast.LENGTH_LONG).show();
-                    // Redirect to login page after register
+                    // Redirect to page_login page after page_register
                     Intent intentLogin = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intentLogin);
                 }

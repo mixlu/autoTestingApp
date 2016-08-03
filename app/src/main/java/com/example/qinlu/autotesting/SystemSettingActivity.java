@@ -6,7 +6,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v7.app.ActionBar;
@@ -37,6 +36,7 @@ public class SystemSettingActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_drawer);
 
+        //set up boolbar in this page
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -124,7 +124,8 @@ public class SystemSettingActivity extends AppCompatActivity{
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        Adapter adapter = new Adapter(getSupportFragmentManager());
+        SettingPageAdapter adapter = new SettingPageAdapter(getSupportFragmentManager());
+        // Adding correspondence setting pages into ViewPager menu
         adapter.addFragment(new SettingsListFragment(), "录入设置");
         adapter.addFragment(new SettingsListFragment(), "标定制动");
         adapter.addFragment(new SettingsListFragment(), "标定侧滑");
@@ -139,38 +140,10 @@ public class SystemSettingActivity extends AppCompatActivity{
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         menuItem.setChecked(true);
+                        // TODO: Add additional logic for page direction
                         mDrawerLayout.closeDrawers();
                         return true;
                     }
                 });
-    }
-
-    static class Adapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragments = new ArrayList<>();
-        private final List<String> mFragmentTitles = new ArrayList<>();
-
-        public Adapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        public void addFragment(Fragment fragment, String title) {
-            mFragments.add(fragment);
-            mFragmentTitles.add(title);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragments.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragments.size();
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mFragmentTitles.get(position);
-        }
     }
 }
