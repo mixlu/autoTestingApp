@@ -8,5 +8,5 @@
     android:layout_width="wrap_content"
     android:layout_gravity="start"
     android:fitsSystemWindows="true"
-    app:headerLayout="@layout/nav_header"
+    app:headerLayout="@layout/header_navdrawer"
     app:menu="@menu/settings_menu"/>
