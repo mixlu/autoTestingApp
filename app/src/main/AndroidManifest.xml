@@ -27,16 +27,16 @@
         <!--检测主页面-->
         <activity
             android:name=".InspectionActivity"
-            android:label="@string/app_name">
-        </activity>
-        <!--设置页面-->
-        <activity
-            android:name=".SystemSettingActivity"
-            android:label="@string/settings">
+            android:label="@string/inspect">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <!--设置页面-->
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings">
         </activity>
     </application>
 

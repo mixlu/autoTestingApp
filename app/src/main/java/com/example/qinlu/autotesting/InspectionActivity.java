@@ -13,7 +13,7 @@ import android.support.v7.widget.Toolbar;
 /**
  * Activity for page_inspection screen
  */
-public class InspectionActivity extends AppCompatActivity{
+public class InspectionActivity extends BaseActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class InspectionActivity extends AppCompatActivity{
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.addTab(tabLayout.newTab().setText("车辆基本信息"));
         tabLayout.addTab(tabLayout.newTab().setText("车辆详细信息"));
         tabLayout.addTab(tabLayout.newTab().setText("检验人员信息"));

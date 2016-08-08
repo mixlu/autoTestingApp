@@ -342,7 +342,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 //                Toast.makeText(LoginActivity.this, "Congrats: Login successful!", Toast.LENGTH_LONG).show();
                 finish();
                 // Redirect to page_login page after page_register
-                Intent intentMainPage = new Intent(getApplicationContext(), SystemSettingActivity.class);
+                Intent intentMainPage = new Intent(getApplicationContext(), InspectionActivity.class);
                 startActivity(intentMainPage);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));

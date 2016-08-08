@@ -17,10 +17,12 @@
         completions."
     </string>
 
-    <!-- Strings related to activity_main page -->
+    <!-- Strings related to drawer -->
+    <string name="settings">设置</string>
+
+    <!-- Strings related to page_inspection page -->
     <string name="full_inspection">全检</string>
     <string name="clear">清除</string>
-    <string name="settings">设置</string>
     <string name="search">查找</string>
     <string name="report">报告</string>
     <string name="inspect">检测</string>

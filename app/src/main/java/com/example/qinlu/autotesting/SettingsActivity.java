@@ -26,7 +26,7 @@ import android.support.v4.view.ViewPager;
 /**
  * Activity for page_systemSetting screen
  */
-public class SystemSettingActivity extends BaseActivity {
+public class SettingsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
