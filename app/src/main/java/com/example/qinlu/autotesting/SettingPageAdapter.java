@@ -11,30 +11,39 @@ import java.util.List;
  * Created by qinlu on 8/2/16.
  */
 public class SettingPageAdapter extends FragmentPagerAdapter {
-    private final List<Fragment> mFragments = new ArrayList<>();
-    private final List<String> mFragmentTitles = new ArrayList<>();
+    int mNumOfTabs;
 
-    public SettingPageAdapter(FragmentManager fm) {
+    public SettingPageAdapter(FragmentManager fm, int NumOfTabs) {
         super(fm);
+        this.mNumOfTabs = NumOfTabs;
     }
-
-    public void addFragment(Fragment fragment, String title) {
-        mFragments.add(fragment);
-        mFragmentTitles.add(title);
-    }
-    //      See more detail on http://stackoverflow.com/questions/18413309/how-to-implement-a-viewpager-with-different-fragments-layouts
+    // See more detail on http://stackoverflow.com/questions/18413309/how-to-implement-a-viewpager-with-different-fragments-layouts
     @Override
     public Fragment getItem(int position) {
-        return mFragments.get(position);
+
+        switch (position) {
+            case 0:
+                SettingsTabFragment1 tab1 = new SettingsTabFragment1();
+                return tab1;
+            case 1:
+                SettingsTabFragment2 tab2 = new SettingsTabFragment2();
+                return tab2;
+//            case 2:
+//                SettingsTabFragment3 tab3 = new SettingsTabFragment3();
+//                return tab3;
+//            case 3:
+//                SettingsTabFragment4 tab4 = new SettingsTabFragment4();
+//                return tab4;
+//            case 4:
+//                SettingsTabFragment5 tab5 = new SettingsTabFragment5();
+//                return tab5;
+            default:
+                return null;
+        }
     }
 
     @Override
     public int getCount() {
-        return mFragments.size();
-    }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return mFragmentTitles.get(position);
+        return mNumOfTabs;
     }
 }

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
-import android.widget.TextView;
 
 /*
  * The activity is for 录入设置 fragment setting
@@ -39,7 +38,7 @@ public class RecordSettingFragment  extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_setting_list, container, false);
+        View view = inflater.inflate(R.layout.page_settings, container, false);
         return view;
     }
 }

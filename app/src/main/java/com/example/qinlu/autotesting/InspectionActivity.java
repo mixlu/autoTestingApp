@@ -11,23 +11,24 @@ import android.support.v7.widget.Toolbar;
  */
 
 /**
- * A page_inspection screen
+ * Activity for page_inspection screen
  */
 public class InspectionActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page_test);
+        setContentView(R.layout.page_inspection);
 
         //set up boolbar in this page
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("基本信息"));
-        tabLayout.addTab(tabLayout.newTab().setText("车辆信息"));
-        tabLayout.addTab(tabLayout.newTab().setText("检验信息"));
+        tabLayout.addTab(tabLayout.newTab().setText("车辆基本信息"));
+        tabLayout.addTab(tabLayout.newTab().setText("车辆详细信息"));
+        tabLayout.addTab(tabLayout.newTab().setText("检验人员信息"));
+        tabLayout.addTab(tabLayout.newTab().setText("车辆检验"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
@@ -36,7 +37,7 @@ public class InspectionActivity extends AppCompatActivity{
 
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());

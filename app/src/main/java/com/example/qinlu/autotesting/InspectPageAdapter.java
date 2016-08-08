@@ -27,11 +27,14 @@ public class InspectPageAdapter extends FragmentPagerAdapter {
                 return tab1;
             // TODO: add another two tab classes
             case 1:
-                InspectTabFragment1 tab2 = new InspectTabFragment1();
+                InspectTabFragment2 tab2 = new InspectTabFragment2();
                 return tab2;
             case 2:
-                InspectTabFragment1 tab3 = new InspectTabFragment1();
+                InspectTabFragment3 tab3 = new InspectTabFragment3();
                 return tab3;
+            case 3:
+                InspectTabFragment4 tab4 = new InspectTabFragment4();
+                return tab4;
             default:
                 return null;
         }

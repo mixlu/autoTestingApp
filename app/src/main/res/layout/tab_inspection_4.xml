@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="52.5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true">
+
+            <!--******一轴*******-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/shaft1_text"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shaft1"
+                    android:textColor="#a2a1b8"
+                    android:maxLength="12"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/shaft1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dad8d8"/>
+
+            <!--******二轴*******-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/shaft2_text"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shaft2"
+                    android:textColor="#a2a1b8"
+                    android:maxLength="12"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="left" />
+
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/shaft2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dad8d8"/>
+
+            <!--******三轴*******-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/shaft3_text"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shaft3"
+                    android:textColor="#a2a1b8"
+                    android:maxLength="12"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="left" />
+
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/shaft3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dad8d8"/>
+
+            <!--******四轴*******-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/shaft4_text"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shaft4"
+                    android:textColor="#a2a1b8"
+                    android:maxLength="12"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="left" />
+
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/shaft4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dad8d8"/>
+
+            <!--******手制动*******-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/manual_brake_text"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/manual_brake"
+                    android:textColor="#a2a1b8"
+                    android:maxLength="12"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="left" />
+
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/manual_brake"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dad8d8"/>
+
+            <!--******悬挂*******-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/manual_brake_text"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/manual_brake"
+                    android:textColor="#a2a1b8"
+                    android:maxLength="12"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="left" />
+
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/manual_brake"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dad8d8"/>
+
+            <!--******声级*******-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/sound_level_text"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sound_level"
+                    android:textColor="#a2a1b8"
+                    android:maxLength="12"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="left" />
+
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/sound_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dad8d8"/>
+
+            <!--******尾气*******-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/emission_text"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emission"
+                    android:textColor="#a2a1b8"
+                    android:maxLength="12"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="left" />
+
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/emission"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dad8d8"/>
+
+            <!--******前照灯*******-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/headlight_text"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/headlight"
+                    android:textColor="#a2a1b8"
+                    android:maxLength="12"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="left" />
+
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/headlight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dad8d8"/>
+
+            <!--******侧滑*******-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/side_slip_text"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/side_slip"
+                    android:textColor="#a2a1b8"
+                    android:maxLength="12"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="left" />
+
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/side_slip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dad8d8"/>
+
+            <!--******车速*******-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/speed_text"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/speed"
+                    android:textColor="#a2a1b8"
+                    android:maxLength="12"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="left" />
+
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/speed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dad8d8"/>
+
+            <!--******外观底盘*******-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/exterior_chassis_text"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/exterior_chassis"
+                    android:textColor="#a2a1b8"
+                    android:maxLength="12"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="left" />
+
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/exterior_chassis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dad8d8"/>
+
+    </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/next1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#51a3df"
+        android:text="开始检验"
+        android:textSize="16dp"
+        android:textColor="#fff"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:drawableRight="@drawable/next"
+        />
+</RelativeLayout>

@@ -7,13 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * 这个页面是检测页面的第一个tab-车辆基本信息的类
- * Created by qinlu on 8/2/16.
+ * Created by qinlu on 8/4/16.
  */
-public class InspectTabFragment1 extends Fragment{
+public class InspectTabFragment3 extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.tab_inspection_1, container, false);
+        return inflater.inflate(R.layout.tab_inspection_3, container, false);
     }
 }
+
