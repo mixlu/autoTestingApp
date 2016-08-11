@@ -8,7 +8,7 @@
                     android:icon="@drawable/ic_dashboard"
                     android:title="主界面" />
                 <item
-                    android:id="@+id/nav_messages"
+                    android:id="@+id/nav_settings"
                     android:icon="@drawable/ic_event"
                     android:title="检测设置" />
                 <item

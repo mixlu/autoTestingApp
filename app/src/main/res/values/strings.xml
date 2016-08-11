@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">车检系统</string>
 
-    <!-- Strings related to page_login -->
+    <!-- Strings for page_login -->
     <string name="prompt_username">用户名</string>
     <string name="prompt_useremail">登陆邮箱</string>
     <string name="prompt_password">密码</string>
@@ -17,10 +17,10 @@
         completions."
     </string>
 
-    <!-- Strings related to drawer -->
+    <!-- Strings for drawer -->
     <string name="settings">设置</string>
 
-    <!-- Strings related to page_inspection page -->
+    <!-- Strings for page_inspection page -->
     <string name="full_inspection">全检</string>
     <string name="clear">清除</string>
     <string name="search">查找</string>
@@ -81,6 +81,15 @@
     <string name="browse_to_print">浏览打印</string>
     <string name="send_to_printer">直接打印</string>
 
+    <!-- Strings for settings_nav page -->
+    <string name="entry_settings">录入设置</string>
+    <string name="calibration_brake_settings">标定制动</string>
+    <string name="calibration_sideslip_settings">标定侧滑</string>
+    <string name="module_settings">模块设置</string>
+    <string name="moduletest_settings">模块测试</string>
+
+    <!-- Strings for settings_entry page -->
+    <string name="management">人员管理</string>
 
     <!-- Other Strings -->
     <string name="menu_night_mode">Night mode</string>

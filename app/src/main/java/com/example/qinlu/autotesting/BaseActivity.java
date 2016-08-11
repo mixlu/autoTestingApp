@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
+import android.content.Intent;
 
 import android.util.Log;
 
@@ -130,6 +131,11 @@ public abstract class BaseActivity extends AppCompatActivity implements OnNaviga
         switch (item.getItemId()) {
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+            case R.id.nav_settings:
+                // Goto settings page
+                Intent i = new Intent(this, SettingsActivity.class);
+                startActivity(i);
                 return true;
             case R.id.menu_night_mode_system:
                 setNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
