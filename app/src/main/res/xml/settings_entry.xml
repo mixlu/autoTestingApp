@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
-        android:title="@string/entry_settings">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/entry_settings">
+    <PreferenceCategory>
 
         <!-- 废气检验员 -->
-        <PreferenceScreen
-            android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$EmissionInspectorFragmentInner"
+        <!--<PreferenceScreen-->
+            <!--android:fragment="com.example.qinlu.autotesting.InspectorFragmentInner"-->
+            <!--android:title="@string/emission_inspector"-->
+            <!--android:summary="@string/management">-->
+            <!--&lt;!&ndash; Arbitrary key/value pairs can be included for fragment arguments &ndash;&gt;-->
+            <!--<extra android:name="emission" android:value="emissionPage" />-->
+        <!--</PreferenceScreen>-->
+
+        <Preference
             android:title="@string/emission_inspector"
-            android:summary="@string/management">
-            <!-- Arbitrary key/value pairs can be included for fragment arguments -->
-            <extra android:name="someKey" android:value="somePrefValue" />
-        </PreferenceScreen>
+            android:summary="@string/management">>
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.example.qinlu.autotesting"
+                android:targetClass="com.example.qinlu.autotesting.EmissionManagement"/>
+
+        </Preference>
 
         <!-- 外检员 -->
         <PreferenceScreen
@@ -18,7 +29,7 @@
             android:title="@string/exterior_inspector"
             android:summary="@string/management">
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
-            <extra android:name="someKey" android:value="somePrefValue" />
+            <extra android:name="exterior" android:value="exteriorPage" />
         </PreferenceScreen>
 
         <!-- 引车员 -->
@@ -27,7 +38,7 @@
             android:title="@string/commander"
             android:summary="@string/management">
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
-            <extra android:name="someKey" android:value="somePrefValue" />
+            <extra android:name="commander" android:value="commanderPage" />
         </PreferenceScreen>
 
         <!-- 车牌号码前缀 -->
@@ -36,7 +47,7 @@
             android:title="@string/plate_prefix"
             android:summary="@string/management">
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
-            <extra android:name="someKey" android:value="somePrefValue" />
+            <extra android:name="plate_prefix" android:value="platePrefixPage" />
         </PreferenceScreen>
 
         <!-- 厂牌型号 -->
@@ -45,7 +56,7 @@
             android:title="@string/make_model"
             android:summary="@string/management">
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
-            <extra android:name="someKey" android:value="somePrefValue" />
+            <extra android:name="make_model" android:value="mkModelPage" />
         </PreferenceScreen>
 
         <!-- 检测单位 -->
@@ -54,7 +65,7 @@
             android:title="@string/inspection_organization"
             android:summary="@string/management">
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
-            <extra android:name="someKey" android:value="somePrefValue" />
+            <extra android:name="org" android:value="orgPage" />
         </PreferenceScreen>
 
         <!-- 设备选择 -->
@@ -63,7 +74,7 @@
             android:title="@string/select_hardware"
             android:summary="@string/management">
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
-            <extra android:name="someKey" android:value="somePrefValue" />
+            <extra android:name="hardw" android:value="hardwPage" />
         </PreferenceScreen>
 
         <!-- 制动监测台 -->

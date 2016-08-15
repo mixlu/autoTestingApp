@@ -38,6 +38,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--设置页面-->
+        <activity
+            android:name=".EmissionManagement"
+            android:label="inspector">
+        </activity>
     </application>
 
 </manifest>

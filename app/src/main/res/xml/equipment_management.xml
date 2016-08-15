@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/select_hardware">
     <PreferenceCategory
-        android:title="@string/select_hardware"
         android:key="equipment_settings">
-
         <CheckBoxPreference
             android:key="hardware1"
             android:title="@string/suspension_station"

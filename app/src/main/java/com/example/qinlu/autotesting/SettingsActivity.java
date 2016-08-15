@@ -18,15 +18,6 @@ import java.util.List;
 
 // TODO: add toolbar
 public class SettingsActivity extends AppCompatPreferenceActivity {
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        if (hasHeaders()) {
-//            Button button = new Button(this);
-//            button.setText("Exit");
-//            setListFooter(button);
-//        }
-//    }
 
     @Override
     protected boolean isValidFragment(String fragmentName) {
