@@ -59,6 +59,7 @@
     <string name="plate_prefix">车牌号码前缀</string>
     <string name="inspection_organization">检测单位</string>
     <string name="select_hardware">选择已有设备</string>
+    <string name="select_braker">选择制动设备</string>
     <string name="brake_tester">制动检验台</string>
     <string name="rolling">滚筒式</string>
     <string name="loading">加载式</string>
@@ -90,6 +91,16 @@
 
     <!-- Strings for settings_entry page -->
     <string name="management">人员管理</string>
+
+    <!-- Strings for equipment management page -->
+    <string name="suspension_station">悬挂检测台</string>
+    <string name="side_station">侧滑检测台</string>
+    <string name="speed_station">车速检测台</string>
+    <!--<string name="sound_level_meter">声级计</string>-->
+    <!--<string name="exterior_chassis">外观底盘</string>-->
+    <!--<string name="headlights_tester">前照灯检测仪</string>-->
+    <!--<string name="emission_analyzer">废气分析仪</string>-->
+    <!--<string name="smoke_level_meter">烟度计</string>-->
 
     <!-- Other Strings -->
     <string name="menu_night_mode">Night mode</string>

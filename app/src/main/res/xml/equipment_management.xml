@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/select_hardware"
+        android:key="equipment_settings">
+
+        <CheckBoxPreference
+            android:key="hardware1"
+            android:title="@string/suspension_station"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="hardware2"
+            android:title="@string/side_station"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="hardware3"
+            android:title="@string/speed_station"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="hardware4"
+            android:title="@string/sound_level_meter"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="hardware5"
+            android:title="@string/exterior_chassis"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="hardware6"
+            android:title="@string/headlights_tester"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="hardware7"
+            android:title="@string/emission_analyzer"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="hardware8"
+            android:title="@string/smoke_level_meter"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+</PreferenceScreen>

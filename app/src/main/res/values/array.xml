@@ -1,13 +1,25 @@
 <resources>
-    <string-array name="listArray">
-        <item>Headings</item>
-        <item>Headings and Details</item>
-        <item>All Data</item>
+    <string-array name="brakerListArray">
+        <item>@string/rolling</item>
+        <item>@string/loading</item>
+        <item>@string/two_platform</item>
+        <item>@string/four_platform</item>
     </string-array>
 
-    <string-array name="listValues">
+    <string-array name="brakerListValue">
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="printListArray">
+        <item>@string/browse_to_print</item>
+        <item>@string/send_to_printer</item>
+    </string-array>
+
+    <string-array name="printListValue">
+        <item>1</item>
+        <item>2</item>
     </string-array>
 </resources>

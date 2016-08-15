@@ -29,6 +29,7 @@
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
             <extra android:name="someKey" android:value="somePrefValue" />
         </PreferenceScreen>
+
         <!-- 车牌号码前缀 -->
         <PreferenceScreen
             android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$PlatePrefixFragmentInner"
@@ -37,6 +38,7 @@
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
             <extra android:name="someKey" android:value="somePrefValue" />
         </PreferenceScreen>
+
         <!-- 厂牌型号 -->
         <PreferenceScreen
             android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$MakeModelFragmentInner"
@@ -45,6 +47,7 @@
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
             <extra android:name="someKey" android:value="somePrefValue" />
         </PreferenceScreen>
+
         <!-- 检测单位 -->
         <PreferenceScreen
             android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$OrgFragmentInner"
@@ -53,6 +56,32 @@
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
             <extra android:name="someKey" android:value="somePrefValue" />
         </PreferenceScreen>
+
+        <!-- 设备选择 -->
+        <PreferenceScreen
+            android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$EquipmentFragmentInner"
+            android:title="@string/select_hardware"
+            android:summary="@string/management">
+            <!-- Arbitrary key/value pairs can be included for fragment arguments -->
+            <extra android:name="someKey" android:value="somePrefValue" />
+        </PreferenceScreen>
+
+        <!-- 制动监测台 -->
+        <ListPreference
+            android:key="BRAKER_LIST"
+            android:title="@string/select_braker"
+            android:summary="@string/management"
+            android:entries="@array/brakerListArray"
+            android:entryValues="@array/brakerListValue" />
+
+        <!-- 打印方式选择 -->
+        <ListPreference
+            android:key="PRINT_LIST"
+            android:title="@string/how_to_print"
+            android:summary="@string/management"
+            android:entries="@array/printListArray"
+            android:entryValues="@array/printListValue" />
+
         <!-- This PreferenceScreen tag sends the user to a completely different
              activity, switching out of the current preferences UI. -->
         <PreferenceScreen
