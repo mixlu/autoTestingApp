@@ -92,15 +92,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
 
-        Button mSignUpButton = (Button) findViewById(R.id.email_sign_up_button);
-        mSignUpButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /// Create Intent for SignUpActivity and Start The Activity
-                Intent intentSignUp = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intentSignUp);
-            }
-        });
+        // 目前不打算支持在登录页面添加新用户的功能
+//        Button mSignUpButton = (Button) findViewById(R.id.email_sign_up_button);
+//        mSignUpButton.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                /// Create Intent for SignUpActivity and Start The Activity
+//                Intent intentSignUp = new Intent(getApplicationContext(), RegisterActivity.class);
+//                startActivity(intentSignUp);
+//            }
+//        });
     }
 
     private void populateAutoComplete() {

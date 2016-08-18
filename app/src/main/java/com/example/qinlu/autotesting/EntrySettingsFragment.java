@@ -20,7 +20,7 @@ import android.widget.EditText;
 
 /**
  * Created by qinlu on 8/10/16.
- * An abstract base class for all settings preference fragments.
+ * 录入设置 fragments.
  */
 public class EntrySettingsFragment extends ToolbarPreferenceFragment {
     private static final String TAG = "EntrySettingsFragment";
@@ -79,7 +79,7 @@ public class EntrySettingsFragment extends ToolbarPreferenceFragment {
 
     }
     /**
-     * 设备选择 Fragment
+     * 选择已有设备 Fragment
      */
     public static class EquipmentFragmentInner extends ToolbarPreferenceFragment {
         @Override
@@ -92,7 +92,7 @@ public class EntrySettingsFragment extends ToolbarPreferenceFragment {
 
     }
     /**
-     * 打印报告 Fragment
+     * 选择打印报告 Fragment
      */
     public static class PrintFragmentInner extends PreferenceFragment {
 

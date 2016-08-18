@@ -90,7 +90,13 @@
     <string name="moduletest_settings">模块测试</string>
 
     <!-- Strings for settings_entry page -->
-    <string name="management">人员管理</string>
+    <string name="print_setting">选择打印报告方式</string>
+    <string name="inspection_organization_setting">检测单位管理</string>
+    <string name="make_model_setting">厂牌型号管理</string>
+    <string name="plate_prefix_setting">车牌号码前缀管理</string>
+    <string name="emission_inspector_setting">废气检验员管理</string>
+    <string name="exterior_inspector_setting">外检员管理</string>
+    <string name="commander_setting">引车员管理</string>
 
     <!-- Strings for equipment management page -->
     <string name="suspension_station">悬挂检测台</string>
@@ -101,6 +107,33 @@
     <!--<string name="headlights_tester">前照灯检测仪</string>-->
     <!--<string name="emission_analyzer">废气分析仪</string>-->
     <!--<string name="smoke_level_meter">烟度计</string>-->
+
+    <!-- Strings for 标定制动设置 和 标定侧滑设置 page -->
+    <string name="calib_method">选择标定方式</string>
+    <string name="calib_items">选择标定项目</string>
+    <string name="calib_method_one">一点标定</string>
+    <string name="calib_method_two">三点标定</string>
+    <string name="calib_items_ulw">前左轮重</string>
+    <string name="calib_items_urw">前右轮重</string>
+    <string name="calib_items_ulb">前左制动</string>
+    <string name="calib_items_urb">前右制动</string>
+    <string name="calib_items_dlw">后左轮重</string>
+    <string name="calib_items_drw">后右轮重</string>
+    <string name="calib_items_dlb">后左制动</string>
+    <string name="calib_items_drb">后右制动</string>
+    <string name="calib_value">砝码标称值</string>
+    <string name="voltage_value_zero">零点电压</string>
+    <string name="display_value">显示值</string>
+    <string name="voltage_value">电压</string>
+    <string name="show_table">参考值</string>
+
+    <!-- Strings for 模块设置 page -->
+    <string name="car_set">车辆到位方式</string>
+    <string name="plateform">平板台类型</string>
+    <string name="wheel_weight_ratio">轮重分辨率</string>
+    <string name="brake_ratio">制动分辨率</string>
+    <string name="tel_type">通讯波特率</string>
+    <string name="weight_limit">总量判定限值</string>
 
     <!-- Other Strings -->
     <string name="menu_night_mode">Night mode</string>

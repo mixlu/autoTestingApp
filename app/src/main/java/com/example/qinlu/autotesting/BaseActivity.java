@@ -19,11 +19,12 @@ import android.support.v4.view.GravityCompat;
 import android.content.Intent;
 
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * Created by qinlu on 8/5/16.
  * The activity that contains global_toolbar, global_navdrawer and snack bar fragments.
- * The activity can be shared by all the pages
+ * The activity can be shared by all the pages except setting entries pages
  *
  * The following Ids should be in every activity with exactly the same id:
  * 1. R.id.drawer_layout
@@ -31,6 +32,7 @@ import android.util.Log;
  * 3. R.id.nav_view
  */
 
+// TODO: add another BaseActivity with toolbar only
 public abstract class BaseActivity extends AppCompatActivity implements OnNavigationItemSelectedListener{
 
     private DrawerLayout mDrawerLayout;
@@ -92,8 +94,21 @@ public abstract class BaseActivity extends AppCompatActivity implements OnNaviga
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // TODO: Add reasonable navigation view item clicks .
-        item.setChecked(true);
-
+//        item.setChecked(true);
+// Handle navigation view item clicks here.
+        int id = item.getItemId();
+        if (id == R.id.nav_home) {
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+            return true;
+        } else if (id == R.id.nav_settings) {
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivity(i);
+        } else if (id == R.id.nav_faq) {
+            Toast.makeText(BaseActivity.this, "还没开发", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_signout) {
+            Intent i = new Intent(this, LoginActivity.class);
+            startActivity(i);
+        }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }

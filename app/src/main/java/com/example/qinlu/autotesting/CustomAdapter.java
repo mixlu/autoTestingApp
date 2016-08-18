@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 /**
  * Created by qinlu on 8/14/16.
+ * Used for add/remove items in some settings pages
  */
 public class CustomAdapter extends BaseAdapter {
     Context context;

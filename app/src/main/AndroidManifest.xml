@@ -13,6 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/BaseTheme">
 
+        <!--首页-->
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <!--登录页面-->
         <activity
             android:name=".LoginActivity"
@@ -33,16 +43,12 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/settings">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <!--设置页面-->
         <activity
             android:name=".EmissionManagement"
-            android:label="inspector">
+            android:label="废气检验员管理">
         </activity>
     </application>
 

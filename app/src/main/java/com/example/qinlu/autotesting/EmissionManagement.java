@@ -5,9 +5,13 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -23,7 +27,7 @@ import java.util.ArrayList;
  * can get to by tapping an item in the first preferences fragment.
  * 废气检验员管理 页面
  */
-public class EmissionManagement extends Activity {
+public class EmissionManagement extends BaseActivityToolBar {
     public ListView listView;
     EditText editTextView;
     ArrayList<Model> ItemModelList;
@@ -40,6 +44,7 @@ public class EmissionManagement extends Activity {
 //        listView.setEmptyView(findViewById(R.id.empty));
         listView.setAdapter(customAdapter);
     }
+
     @SuppressLint("NewApi")
     public void addValue(View v) {
         String name = editTextView.getText().toString();

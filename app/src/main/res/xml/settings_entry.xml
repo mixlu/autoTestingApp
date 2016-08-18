@@ -3,18 +3,8 @@
     android:title="@string/entry_settings">
     <PreferenceCategory>
 
-        <!-- 废气检验员 -->
-        <!--<PreferenceScreen-->
-            <!--android:fragment="com.example.qinlu.autotesting.InspectorFragmentInner"-->
-            <!--android:title="@string/emission_inspector"-->
-            <!--android:summary="@string/management">-->
-            <!--&lt;!&ndash; Arbitrary key/value pairs can be included for fragment arguments &ndash;&gt;-->
-            <!--<extra android:name="emission" android:value="emissionPage" />-->
-        <!--</PreferenceScreen>-->
-
         <Preference
-            android:title="@string/emission_inspector"
-            android:summary="@string/management">>
+            android:title="@string/emission_inspector_setting">
 
             <intent
                 android:action="android.intent.action.VIEW"
@@ -26,8 +16,7 @@
         <!-- 外检员 -->
         <PreferenceScreen
             android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$ExteriorInspectorFragmentInner"
-            android:title="@string/exterior_inspector"
-            android:summary="@string/management">
+            android:title="@string/exterior_inspector_setting">
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
             <extra android:name="exterior" android:value="exteriorPage" />
         </PreferenceScreen>
@@ -35,8 +24,7 @@
         <!-- 引车员 -->
         <PreferenceScreen
             android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$CommandInspectorFragmentInner"
-            android:title="@string/commander"
-            android:summary="@string/management">
+            android:title="@string/commander_setting">
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
             <extra android:name="commander" android:value="commanderPage" />
         </PreferenceScreen>
@@ -44,8 +32,7 @@
         <!-- 车牌号码前缀 -->
         <PreferenceScreen
             android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$PlatePrefixFragmentInner"
-            android:title="@string/plate_prefix"
-            android:summary="@string/management">
+            android:title="@string/plate_prefix_setting">
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
             <extra android:name="plate_prefix" android:value="platePrefixPage" />
         </PreferenceScreen>
@@ -53,8 +40,7 @@
         <!-- 厂牌型号 -->
         <PreferenceScreen
             android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$MakeModelFragmentInner"
-            android:title="@string/make_model"
-            android:summary="@string/management">
+            android:title="@string/make_model_setting">
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
             <extra android:name="make_model" android:value="mkModelPage" />
         </PreferenceScreen>
@@ -62,8 +48,7 @@
         <!-- 检测单位 -->
         <PreferenceScreen
             android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$OrgFragmentInner"
-            android:title="@string/inspection_organization"
-            android:summary="@string/management">
+            android:title="@string/inspection_organization_setting">
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
             <extra android:name="org" android:value="orgPage" />
         </PreferenceScreen>
@@ -71,8 +56,7 @@
         <!-- 设备选择 -->
         <PreferenceScreen
             android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$EquipmentFragmentInner"
-            android:title="@string/select_hardware"
-            android:summary="@string/management">
+            android:title="@string/select_hardware">
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
             <extra android:name="hardw" android:value="hardwPage" />
         </PreferenceScreen>
@@ -81,28 +65,15 @@
         <ListPreference
             android:key="BRAKER_LIST"
             android:title="@string/select_braker"
-            android:summary="@string/management"
             android:entries="@array/brakerListArray"
             android:entryValues="@array/brakerListValue" />
 
         <!-- 打印方式选择 -->
         <ListPreference
             android:key="PRINT_LIST"
-            android:title="@string/how_to_print"
-            android:summary="@string/management"
+            android:title="@string/print_setting"
             android:entries="@array/printListArray"
             android:entryValues="@array/printListValue" />
-
-        <!-- This PreferenceScreen tag sends the user to a completely different
-             activity, switching out of the current preferences UI. -->
-        <PreferenceScreen
-            android:title="test"
-            android:summary="test">
-
-            <intent android:action="android.intent.action.VIEW"
-                android:data="http://www.android.com" />
-
-        </PreferenceScreen>
 
     </PreferenceCategory>
 

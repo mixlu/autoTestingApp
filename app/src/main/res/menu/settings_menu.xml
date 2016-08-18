@@ -5,20 +5,20 @@
         <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_home"
-                    android:icon="@drawable/ic_dashboard"
+                    android:icon="@drawable/ic_home"
                     android:title="主界面" />
                 <item
                     android:id="@+id/nav_settings"
-                    android:icon="@drawable/ic_event"
-                    android:title="检测设置" />
+                    android:icon="@drawable/ic_setting"
+                    android:title="设置" />
                 <item
-                    android:id="@+id/nav_friends"
-                    android:icon="@drawable/ic_headset"
-                    android:title="人员设置" />
+                    android:id="@+id/nav_faq"
+                    android:icon="@drawable/ic_faq"
+                    android:title="常见问题" />
                 <item
-                    android:id="@+id/nav_discussion"
-                    android:icon="@drawable/ic_forum"
-                    android:title="其他" />
+                    android:id="@+id/nav_signout"
+                    android:icon="@drawable/ic_signout"
+                    android:title="注销" />
         </group>
 
 </menu>

@@ -1,11 +1,11 @@
 <resources>
+    <!--设置－录入设置－制动检验台-->
     <string-array name="brakerListArray">
         <item>@string/rolling</item>
         <item>@string/loading</item>
         <item>@string/two_platform</item>
         <item>@string/four_platform</item>
     </string-array>
-
     <string-array name="brakerListValue">
         <item>1</item>
         <item>2</item>
@@ -13,13 +13,103 @@
         <item>4</item>
     </string-array>
 
+    <!--设置－录入设置－报告方式-->
     <string-array name="printListArray">
         <item>@string/browse_to_print</item>
         <item>@string/send_to_printer</item>
     </string-array>
-
     <string-array name="printListValue">
         <item>1</item>
         <item>2</item>
+    </string-array>
+
+    <!--设置－标定制动－标定方式-->
+    <string-array name="calibMethodListArray">
+        <item>@string/calib_method_one</item>
+        <item>@string/calib_method_one</item>
+    </string-array>
+    <string-array name="calibMethodListValue">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!--设置－标定制动－标定项目选择-->
+    <string-array name="calibItemsListArray">
+        <item>@string/calib_items_ulw</item>
+        <item>@string/calib_items_urw</item>
+        <item>@string/calib_items_ulb</item>
+        <item>@string/calib_items_urb</item>
+        <item>@string/calib_items_dlw</item>
+        <item>@string/calib_items_drw</item>
+        <item>@string/calib_items_dlb</item>
+        <item>@string/calib_items_drb</item>
+    </string-array>
+    <string-array name="calibItemsListValue">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <!--设置－模块设置-通讯波特率-->
+    <string-array name="telTypeListArray">
+        <item>9600</item>
+        <item>19200</item>
+        <item>57600</item>
+        <item>115200</item>
+    </string-array>
+    <string-array name="telTypeListValue">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <!--设置－模块设置-车辆到位方式-->
+    <string-array name="carsetListArray">
+        <item>"光电开关"</item>
+        <item>"重量"</item>
+        <item>"无"</item>
+    </string-array>
+    <string-array name="carsetListValue">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <!--设置－模块设置-平板台类型-->
+    <string-array name="plateformListArray">
+        <item>"两板"</item>
+        <item>"四版"</item>
+    </string-array>
+    <string-array name="plateformListValue">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!--设置－模块设置-轮重分辨率-->
+    <string-array name="wheelWeightListArray">
+        <item>"1kg"</item>
+        <item>"5kg"</item>
+    </string-array>
+    <string-array name="wheelWeightListValue">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!--设置－模块设置-制动分辨率-->
+    <string-array name="brakeListArray">
+        <item>"1 (10N)"</item>
+        <item>"2 (10N)"</item>
+        <item>"3 (10N)"</item>
+    </string-array>
+    <string-array name="brakeListValue">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
 </resources>

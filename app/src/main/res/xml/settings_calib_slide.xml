@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="标定侧滑">
+    <PreferenceCategory android:title="设置标定">
+        <EditTextPreference android:name="@string/calib_value"
+            android:defaultValue="what"
+            android:summary="m/km"
+            android:title="砝码标称值"
+            android:key="editTextPref" />
+        <EditTextPreference android:name="@string/display_value"
+            android:defaultValue="eq"
+            android:title="显示值"
+            android:summary="m/km"
+            android:key="editTextPref" />
+        <EditTextPreference android:name="@string/voltage_value_zero"
+            android:defaultValue="sadf"
+            android:title="零点电压值"
+            android:summary="单位为v"
+            android:key="editTextPref" />
+        <EditTextPreference android:name="@string/voltage_value"
+            android:defaultValue="b"
+            android:title="电压值"
+            android:summary="单位为v"
+            android:key="editTextPref" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="关于">
+        <Preference
+            android:title="@string/show_table"
+            android:summary="电压范围和标定点的设置参考"
+            android:key="@string/show_table"/>
+
+        <com.example.qinlu.autotesting.SetDefaultAlertDialogPreference
+            android:title="恢复默认值"
+            android:key="set_default_vals"
+            android:dialogMessage="确定要恢复默认值吗?"/>
+    </PreferenceCategory>
+</PreferenceScreen>
