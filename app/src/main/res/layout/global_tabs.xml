@@ -5,12 +5,7 @@
     android:id="@+id/tabs"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_below="@+id/toolbar"
-    app:tabIndicatorColor="#51a3df"
-    app:tabIndicatorHeight="3.9dp"
-    android:background="#2c3039"
-    app:tabTextColor="#929292"
-    app:tabSelectedTextColor="#fff"
-    android:elevation="6dp"
-    android:minHeight="?attr/actionBarSize"
-    android:theme="@style/BaseTheme"/>
+    app:tabTextColor="#fff"
+    app:tabSelectedTextColor="#000"
+    app:tabMode="fixed"
+    app:tabGravity="fill"/>

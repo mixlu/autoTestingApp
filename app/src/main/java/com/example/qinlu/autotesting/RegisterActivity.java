@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -12,7 +13,7 @@ import android.widget.Toast;
  */
 public class RegisterActivity extends AppCompatActivity {
     EditText editTextUserEmail, editTextUserName, editTextPassword, editTextConfirmPassword;
-    Button btnCreateAccount;
+    TextView btnCreateAccount;
 
     LoginDataBaseAdapter loginDataBaseAdapter;
     @Override
@@ -29,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
         editTextPassword = (EditText)findViewById(R.id.editTextPassword);
         editTextConfirmPassword = (EditText)findViewById(R.id.editTextConfirmPassword);
 
-        btnCreateAccount = (Button)findViewById(R.id.buttonCreateAccount);
+        btnCreateAccount = (TextView)findViewById(R.id.buttonCreateAccount);
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String userEmail = editTextUserEmail.getText().toString();

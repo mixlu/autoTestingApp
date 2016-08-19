@@ -93,9 +93,6 @@ public abstract class BaseActivity extends AppCompatActivity implements OnNaviga
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // TODO: Add reasonable navigation view item clicks .
-//        item.setChecked(true);
-// Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_home) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -106,6 +103,7 @@ public abstract class BaseActivity extends AppCompatActivity implements OnNaviga
         } else if (id == R.id.nav_faq) {
             Toast.makeText(BaseActivity.this, "还没开发", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_signout) {
+            // TODO: Add right behaviour to logout
             Intent i = new Intent(this, LoginActivity.class);
             startActivity(i);
         }

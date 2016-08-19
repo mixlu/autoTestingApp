@@ -1,93 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fitsSystemWindows="true">
-
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="56dp"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp">
+        android:background="@drawable/transparentimage">
 
-        <!-- Name Label -->
-        <android.support.design.widget.TextInputLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <AutoCompleteTextView
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true">
+
+            <!-- Name Label -->
+            <EditText
+                android:textSize="16dp"
                 android:id="@+id/editTextUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="用户名"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textCapWords"
-                android:maxLines="1"
-                android:singleLine="true" />
-        </android.support.design.widget.TextInputLayout>
+                android:textColorHint="#ADCCE2"
+                android:textColor="#ADCCE2"
+                android:layout_marginLeft="22dp"
+                android:inputType="text"
+                android:background="#0000"
+                android:padding="16dp"
+                android:layout_marginRight="35dp"/>
 
-        <!--  Email Label -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <AutoCompleteTextView
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="1dp"
+                android:background="#ADCCE2" />
+
+            <!--  Email Label -->
+            <EditText
+                android:textSize="16dp"
                 android:id="@+id/editTextUserEmail"
-                android:hint="邮箱"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:singleLine="true" />
-        </android.support.design.widget.TextInputLayout>
+                android:hint="Email"
 
-        <!-- Password Label -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+                android:textColorHint="#ADCCE2"
+                android:textColor="#ADCCE2"
+                android:layout_marginLeft="22dp"
+                android:inputType="text"
+                android:background="#0000"
+                android:padding="16dp"
+                android:layout_marginRight="35dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="1dp"
+                android:background="#ADCCE2" />
+
+            <!-- Password Label -->
             <EditText
                 android:id="@+id/editTextPassword"
+                android:textSize="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_password"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:singleLine="true" />
-        </android.support.design.widget.TextInputLayout>
+                android:singleLine="true"
 
-        <!-- Confirm Password Label -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+                android:textColorHint="#ADCCE2"
+                android:textColor="#ADCCE2"
+                android:layout_marginLeft="22dp"
+                android:background="#0000"
+                android:padding="16dp"
+                android:layout_marginRight="35dp"/>
+
+
+            <!-- Confirm Password Label -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="1dp"
+                android:background="#ADCCE2" />
+
             <EditText
                 android:id="@+id/editTextConfirmPassword"
-                android:layout_width="fill_parent"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_password_confirm"
+                android:textColorHint="#ADCCE2"
+                android:layout_marginLeft="22dp"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:singleLine="true" />
-        </android.support.design.widget.TextInputLayout>
+                android:singleLine="true"
 
-        <!-- Sign up Button -->
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/buttonCreateAccount"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:padding="12dp"
-            android:text="添加用户" />
+                android:maxLength="12"
+                android:textColor="#ADCCE2"
+                android:background="#0000"
+                android:padding="16dp"
+                android:layout_marginRight="35dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:background="#ADCCE2"/>
 
-    </LinearLayout>
 
-</ScrollView>
+            <TextView
+                android:id="@+id/buttonCreateAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rect"
+                android:text="添加用户"
+                android:textSize="16dp"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:padding="16dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="28dp"
+                android:layout_marginTop="32dp"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+</FrameLayout>

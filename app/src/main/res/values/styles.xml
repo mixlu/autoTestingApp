@@ -11,6 +11,14 @@
         <!--TODO: can add android:selectableItemBackground-->
     </style>
 
+    <style name="AppTheme_Dark_Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">#FFFFFF</item>
+        <item name="android:textColorPrimary">#CCCCCC</item>
+        <item name="android:background">@color/primary_dark</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
     <style name="FabStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

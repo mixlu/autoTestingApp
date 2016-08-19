@@ -1,5 +1,6 @@
 package com.example.qinlu.autotesting;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -17,7 +18,9 @@ public class DataBaseHelper extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase _db)
     {
+		// Create USERS Table and insert default value
         _db.execSQL(LoginDataBaseAdapter.DATABASE_CREATE);
+		this.addDefaultUser(_db, "admin@admin.com", "admin", "123456");
     }
     // Called when there is a database version mismatch meaning that the version
     // of the database on disk needs to be upgraded to the current version.
@@ -36,5 +39,13 @@ public class DataBaseHelper extends SQLiteOpenHelper
         onCreate(_db);
     }
 
+    public void addDefaultUser(SQLiteDatabase db, String email, String user, String pwd) {
+        ContentValues defaultValues = new ContentValues();
+        defaultValues.put("USEREMAIL", email);
+        defaultValues.put("USERNAME", user);
+        defaultValues.put("PASSWORD",pwd);
 
+        // Insert the row into your table
+        db.insert(LoginDataBaseAdapter.TABLE_USER, null, defaultValues);
+    }
 }
