@@ -2,15 +2,12 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/entry_settings">
     <PreferenceCategory>
-
         <Preference
             android:title="@string/emission_inspector_setting">
-
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.example.qinlu.autotesting"
                 android:targetClass="com.example.qinlu.autotesting.EmissionManagement"/>
-
         </Preference>
 
         <!-- 外检员 -->

@@ -26,7 +26,7 @@
     <string name="clear">清除</string>
     <string name="search">查找</string>
     <string name="report">报告</string>
-    <string name="inspect">检测</string>
+    <string name="inspect">车辆检测</string>
     <string name="sign_out">退出</string>
     <string name="inspection_no">检测编号</string>
     <string name="plate_number">车牌号码</string>

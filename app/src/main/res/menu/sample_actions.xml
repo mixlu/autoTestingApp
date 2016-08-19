@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_night"
-        android:title="@string/menu_night_mode"
+        android:title="清空"
         app:showAsAction="never">
         <menu>
             <group android:checkableBehavior="single">

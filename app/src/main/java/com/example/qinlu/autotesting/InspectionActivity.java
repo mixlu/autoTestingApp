@@ -28,7 +28,8 @@ public class InspectionActivity extends BaseActivity{
         tabLayout.addTab(tabLayout.newTab().setText("车辆基本信息"));
         tabLayout.addTab(tabLayout.newTab().setText("车辆详细信息"));
         tabLayout.addTab(tabLayout.newTab().setText("检验人员信息"));
-        tabLayout.addTab(tabLayout.newTab().setText("车辆检验"));
+        tabLayout.addTab(tabLayout.newTab().setText("车辆检验选项"));
+        tabLayout.addTab(tabLayout.newTab().setText("开始检测"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);

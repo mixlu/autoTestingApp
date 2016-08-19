@@ -35,6 +35,9 @@ public class InspectPageAdapter extends FragmentPagerAdapter {
             case 3:
                 InspectTabFragment4 tab4 = new InspectTabFragment4();
                 return tab4;
+            case 4:
+                InspectTabFragment5 tab5 = new InspectTabFragment5();
+                return tab5;
             default:
                 return null;
         }
