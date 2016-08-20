@@ -32,7 +32,6 @@ import android.widget.Toast;
  * 3. R.id.nav_view
  */
 
-// TODO: add another BaseActivity with toolbar only
 public abstract class BaseActivity extends AppCompatActivity implements OnNavigationItemSelectedListener{
 
     private DrawerLayout mDrawerLayout;
@@ -102,9 +101,11 @@ public abstract class BaseActivity extends AppCompatActivity implements OnNaviga
             startActivity(i);
         } else if (id == R.id.nav_faq) {
             Toast.makeText(BaseActivity.this, "还没开发", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_report) {
+            Toast.makeText(BaseActivity.this, "还没开发", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_signout) {
             // TODO: Add right behaviour to logout
-            Intent i = new Intent(this, LoginActivity.class);
+            Intent i = new Intent(this, WelcomeActivity.class);
             startActivity(i);
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -113,32 +114,16 @@ public abstract class BaseActivity extends AppCompatActivity implements OnNaviga
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // TODO: update to reasonable setting page's action menu
-        getMenuInflater().inflate(R.menu.sample_actions, menu);
+        getMenuInflater().inflate(R.menu.inspection_toolbar_menu, menu);
         return true;
     }
 
-    // TODO: update to reasonable setting page's action menu
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        switch (AppCompatDelegate.getDefaultNightMode()) {
-            case AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM:
-                menu.findItem(R.id.menu_night_mode_system).setChecked(true);
-                break;
-            case AppCompatDelegate.MODE_NIGHT_AUTO:
-                menu.findItem(R.id.menu_night_mode_auto).setChecked(true);
-                break;
-            case AppCompatDelegate.MODE_NIGHT_YES:
-                menu.findItem(R.id.menu_night_mode_night).setChecked(true);
-                break;
-            case AppCompatDelegate.MODE_NIGHT_NO:
-                menu.findItem(R.id.menu_night_mode_day).setChecked(true);
-                break;
-        }
-        return true;
-    }
+    // TODO: update to reasonable toolbar menu action
+//    @Override
+//    public boolean onPrepareOptionsMenu(Menu menu) {
+//        return true;
+//    }
 
-    // TODO: update to reasonable setting page's action menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -150,26 +135,13 @@ public abstract class BaseActivity extends AppCompatActivity implements OnNaviga
                 Intent i = new Intent(this, SettingsActivity.class);
                 startActivity(i);
                 return true;
-            case R.id.menu_night_mode_system:
-                setNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+            case R.id.menu_clearall:
+                Toast.makeText(BaseActivity.this, "清空所有tab的信息", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.menu_night_mode_day:
-                setNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                break;
-            case R.id.menu_night_mode_night:
-                setNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                break;
-            case R.id.menu_night_mode_auto:
-                setNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
+            case R.id.menu_save:
+                Toast.makeText(BaseActivity.this, "保存信息", Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private void setNightMode(@AppCompatDelegate.NightMode int nightMode) {
-        AppCompatDelegate.setDefaultNightMode(nightMode);
-        if (Build.VERSION.SDK_INT >= 11) {
-            recreate();
-        }
     }
 }

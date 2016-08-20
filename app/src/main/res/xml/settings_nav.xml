@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<preference-headers
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
     <header
         android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_menu_record"
         android:title="@string/entry_settings" />
 
     <!--标定制动目录-->
     <header
         android:fragment="com.example.qinlu.autotesting.CalibrationBrakeSettingFragment"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_menu_brake"
         android:title="@string/calibration_brake_settings" />
 
     <!--标定侧滑目录-->
     <header
         android:fragment="com.example.qinlu.autotesting.CalibrationSlideSettingFragment"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_menu_brake"
         android:title="@string/calibration_sideslip_settings" />
 
     <!--模块设置目录-->
     <header
         android:fragment="com.example.qinlu.autotesting.ModuleSettingFragment"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_menu_modsetting"
         android:title="@string/module_settings" />
 
     <!--模块测试目录-->
     <header
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_menu_test"
         android:title="@string/moduletest_settings" />
 
     <!--用户管理目录-->
     <header
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_menu_adduser"
         android:title="添加新用户">
         <intent
             android:action="android.intent.action.VIEW"

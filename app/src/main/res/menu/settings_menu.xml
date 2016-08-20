@@ -12,6 +12,10 @@
                     android:icon="@drawable/ic_setting"
                     android:title="设置" />
                 <item
+                    android:id="@+id/nav_report"
+                    android:icon="@drawable/ic_report"
+                    android:title="打印报告" />
+                <item
                     android:id="@+id/nav_faq"
                     android:icon="@drawable/ic_faq"
                     android:title="常见问题" />

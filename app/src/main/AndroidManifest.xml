@@ -17,6 +17,10 @@
         <activity
             android:name=".WelcomeActivity"
             android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <!--登录页面-->
@@ -34,18 +38,15 @@
         <activity
             android:name=".InspectionActivity"
             android:label="@string/inspect">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
         <!--设置页面-->
         <activity
             android:name=".SettingsActivity"
             android:label="@string/settings">
         </activity>
 
-        <!--设置页面-->
+        <!--废气检验员管理页面-->
         <activity
             android:name=".EmissionManagement"
             android:label="废气检验员管理">
