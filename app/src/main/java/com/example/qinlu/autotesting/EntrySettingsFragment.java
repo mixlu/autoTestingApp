@@ -31,7 +31,6 @@ public class EntrySettingsFragment extends ToolbarPreferenceFragment {
         addPreferencesFromResource(R.xml.settings_entry);
     }
 
-
     /**
      * 外检员管理 Fragment
      */

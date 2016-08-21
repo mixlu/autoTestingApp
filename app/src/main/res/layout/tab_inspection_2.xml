@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#fff">
+    android:background="#fff"
+    android:theme="@style/InspectionTabTheme">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,9 +30,7 @@
                     android:id="@+id/transportation_number_txt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/transportation_number"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/transportation_number"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -42,7 +41,6 @@
                         android:id="@+id/transportation_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -66,9 +64,7 @@
                     android:id="@+id/vin_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/vin"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/vin"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -81,7 +77,6 @@
                         android:id="@+id/vin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -105,9 +100,7 @@
                     android:id="@+id/plate_class_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/plate_class"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/plate_class"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -120,7 +113,6 @@
                         android:id="@+id/plate_class"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -144,9 +136,7 @@
                     android:id="@+id/organization_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/organization"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/organization"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -159,7 +149,6 @@
                         android:id="@+id/organization"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -183,9 +172,7 @@
                     android:id="@+id/engine_no_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/engine_no"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/engine_no"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -198,7 +185,6 @@
                         android:id="@+id/engine_no"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -222,9 +208,7 @@
                     android:id="@+id/vehicle_type_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/vehicle_type"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/vehicle_type"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -233,11 +217,9 @@
                     android:orientation="vertical">
 
                     <EditText
-
                         android:id="@+id/vehicle_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -261,9 +243,7 @@
                     android:id="@+id/seats_number_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/seats_number"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/seats_number"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -272,11 +252,9 @@
                     android:orientation="vertical">
 
                     <EditText
-
                         android:id="@+id/seats_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -284,7 +262,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="#dad8d8" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -300,9 +277,7 @@
                     android:id="@+id/register_date_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/register_date"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/register_date"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -315,13 +290,10 @@
                         android:id="@+id/register_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1"
                         android:maxLength="8"
-                        android:hint="年/月/日"
-                        android:textSize="13dp"
-                        android:textColorHint="@color/primary"/>
+                        android:hint="年/月/日"/>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -342,9 +314,7 @@
                     android:id="@+id/state_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/state"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/state"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -357,7 +327,6 @@
                         android:id="@+id/state"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -381,9 +350,7 @@
                     android:id="@+id/headlight_type_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/headlight_type"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/headlight_type"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -396,7 +363,6 @@
                         android:id="@+id/headlight_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -420,9 +386,7 @@
                     android:id="@+id/vin_base_weight_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/base_weight"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/base_weight"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -435,7 +399,6 @@
                         android:id="@+id/base_weight"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -459,9 +422,7 @@
                     android:id="@+id/whole_weight_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/whole_weight"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/whole_weight"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -474,7 +435,6 @@
                         android:id="@+id/whole_weight"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -498,9 +458,7 @@
                     android:id="@+id/fuel_type_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/fuel_type"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/fuel_type"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -513,7 +471,6 @@
                         android:id="@+id/fuel_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -537,9 +494,7 @@
                     android:id="@+id/brake_system_type_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/brake_system_type"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/brake_system_type"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -552,7 +507,6 @@
                         android:id="@+id/brake_system_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -576,9 +530,7 @@
                     android:id="@+id/drive_wheel_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/drive_wheel"
-                    android:textSize="12dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:text="@string/drive_wheel"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -591,7 +543,6 @@
                         android:id="@+id/drive_wheel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 
@@ -605,19 +556,5 @@
         </LinearLayout>
 
     </ScrollView>
-
-    <TextView
-        android:id="@+id/next1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#51a3df"
-        android:text="下一步"
-        android:textSize="16dp"
-        android:textColor="#fff"
-        android:padding="16dp"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:drawableRight="@drawable/next"
-        />
 
 </RelativeLayout>

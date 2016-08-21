@@ -38,7 +38,7 @@ public class RecordSettingFragment  extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.page_settings, container, false);
+        View view = inflater.inflate(R.layout.page_settings_common, container, false);
         return view;
     }
 }

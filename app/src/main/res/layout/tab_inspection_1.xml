@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#fff">
+    android:background="#fff"
+    android:theme="@style/InspectionTabTheme">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,9 +31,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/plate_number"
-                    android:textSize="14dp"
-                    android:layout_marginLeft="20dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:layout_marginLeft="20dp"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -43,7 +42,6 @@
                         android:id="@+id/plageNum"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1"/>
 
@@ -68,9 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/make_model"
-                    android:textSize="14dp"
-                    android:layout_marginLeft="20dp"
-                    android:textColor="@color/colorPrimary" />
+                    android:layout_marginLeft="20dp"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -83,7 +79,6 @@
                         android:id="@+id/plateType"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#333333"
                         android:background="#00000000"
                         android:maxLines="1" />
 

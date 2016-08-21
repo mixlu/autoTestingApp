@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/entry_settings">
-    <PreferenceCategory>
+    <PreferenceCategory
+        android:title="人员管理">
         <Preference
             android:title="@string/emission_inspector_setting">
             <intent
@@ -25,7 +26,9 @@
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
             <extra android:name="commander" android:value="commanderPage" />
         </PreferenceScreen>
-
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="车辆信息管理">
         <!-- 车牌号码前缀 -->
         <PreferenceScreen
             android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$PlatePrefixFragmentInner"
@@ -49,7 +52,9 @@
             <!-- Arbitrary key/value pairs can be included for fragment arguments -->
             <extra android:name="org" android:value="orgPage" />
         </PreferenceScreen>
-
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="检测设备管理">
         <!-- 设备选择 -->
         <PreferenceScreen
             android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$EquipmentFragmentInner"
@@ -65,13 +70,15 @@
             android:entries="@array/brakerListArray"
             android:entryValues="@array/brakerListValue" />
 
-        <!-- 打印方式选择 -->
-        <ListPreference
-            android:key="PRINT_LIST"
-            android:title="@string/print_setting"
-            android:entries="@array/printListArray"
-            android:entryValues="@array/printListValue" />
-
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="打印报告方式选择">
+    <!-- 打印方式选择 -->
+    <ListPreference
+        android:key="PRINT_LIST"
+        android:title="@string/print_setting"
+        android:entries="@array/printListArray"
+        android:entryValues="@array/printListValue" />
+    </PreferenceCategory>
 </PreferenceScreen>

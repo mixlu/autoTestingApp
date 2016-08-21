@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#fff">
+    android:background="#fff"
+    android:theme="@style/InspectionTabTheme">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,8 +30,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/shaft1"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLength="12"
                     android:background="#0000"
                     android:padding="16dp"
                     android:gravity="left"/>
@@ -56,11 +55,9 @@
                 <TextView
                     android:layout_weight="1"
                     android:id="@+id/shaft2_text"
-                    android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/shaft2"
-                    android:textColor="@color/colorPrimary"
                     android:maxLength="12"
                     android:background="#0000"
                     android:padding="16dp"
@@ -93,8 +90,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/shaft3"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLength="12"
                     android:background="#0000"
                     android:padding="16dp"
                     android:gravity="left" />
@@ -126,8 +121,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/shaft4"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLength="12"
                     android:background="#0000"
                     android:padding="16dp"
                     android:gravity="left" />
@@ -155,11 +148,9 @@
                 <TextView
                     android:layout_weight="1"
                     android:id="@+id/manual_brake_text"
-                    android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/manual_brake"
-                    android:textColor="@color/colorPrimary"
                     android:maxLength="12"
                     android:background="#0000"
                     android:padding="16dp"
@@ -192,8 +183,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/manual_brake"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLength="12"
                     android:background="#0000"
                     android:padding="16dp"
                     android:gravity="left" />
@@ -225,8 +214,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/sound_level"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLength="12"
                     android:background="#0000"
                     android:padding="16dp"
                     android:gravity="left" />
@@ -258,8 +245,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/emission"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLength="12"
                     android:background="#0000"
                     android:padding="16dp"
                     android:gravity="left" />
@@ -291,8 +276,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/headlight"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLength="12"
                     android:background="#0000"
                     android:padding="16dp"
                     android:gravity="left" />
@@ -320,11 +303,9 @@
                 <TextView
                     android:layout_weight="1"
                     android:id="@+id/side_slip_text"
-                    android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/side_slip"
-                    android:textColor="@color/colorPrimary"
                     android:maxLength="12"
                     android:background="#0000"
                     android:padding="16dp"
@@ -357,8 +338,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/speed"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLength="12"
                     android:background="#0000"
                     android:padding="16dp"
                     android:gravity="left" />
@@ -390,8 +369,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/exterior_chassis"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLength="12"
                     android:background="#0000"
                     android:padding="16dp"
                     android:gravity="left" />
@@ -410,20 +387,6 @@
                 android:layout_height="1dp"
                 android:background="#dad8d8"/>
 
-    </LinearLayout>
+        </LinearLayout>
     </ScrollView>
-
-    <TextView
-        android:id="@+id/next1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#51a3df"
-        android:text="开始检验"
-        android:textSize="12dp"
-        android:textColor="#fff"
-        android:padding="16dp"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:drawableRight="@drawable/next"
-        />
 </RelativeLayout>

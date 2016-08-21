@@ -1,11 +1,6 @@
 package com.example.qinlu.autotesting;
 
-import android.os.Bundle;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceFragment;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.app.ActionBar;
 
@@ -29,7 +24,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     public void onBuildHeaders(List<Header> target) {
         loadHeadersFromResource(R.xml.settings_nav, target);
 
-        setContentView(R.layout.page_settings);
+        setContentView(R.layout.page_settings_common);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

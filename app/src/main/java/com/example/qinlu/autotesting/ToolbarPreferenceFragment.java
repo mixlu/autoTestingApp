@@ -1,9 +1,11 @@
 package com.example.qinlu.autotesting;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
+import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +18,14 @@ public class ToolbarPreferenceFragment extends PreferenceFragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.page_settings, container, false);
+
+        // create ContextThemeWrapper from the original Activity Context with the custom theme
+        final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.PreferenceScreen);
+        // clone the inflater using the ContextThemeWrapper
+        LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
+        View layout = inflater.inflate(R.layout.page_settings_common, container, false);
         if (layout != null) {
+
             AppCompatPreferenceActivity activity = (AppCompatPreferenceActivity) getActivity();
             Toolbar toolbar = (Toolbar) layout.findViewById(R.id.toolbar);
             activity.setSupportActionBar(toolbar);
@@ -26,7 +34,6 @@ public class ToolbarPreferenceFragment extends PreferenceFragment {
             bar.setHomeButtonEnabled(true);
             bar.setDisplayHomeAsUpEnabled(true);
             bar.setDisplayShowTitleEnabled(true);
-//            bar.setHomeAsUpIndicator(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
             bar.setTitle(getPreferenceScreen().getTitle());
         }
         return layout;
