@@ -9,6 +9,8 @@ import android.util.Log;
 
 public class DataBaseHelper extends SQLiteOpenHelper
 {
+    public static final String DATABASE_NAME = "cars.db";
+    static final int DATABASE_VERSION = 1;
     public DataBaseHelper(Context context, String name,CursorFactory factory, int version)
     {
         super(context, name, factory, version);
@@ -19,7 +21,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
     public void onCreate(SQLiteDatabase _db)
     {
 		// Create USERS Table and insert default value
-        _db.execSQL(LoginDataBaseAdapter.DATABASE_CREATE);
+        _db.execSQL(LoginDataBaseAdapter.CREATE_TABLE_USER);
 		this.addDefaultUser(_db, "admin@admin.com", "admin", "123456");
     }
     // Called when there is a database version mismatch meaning that the version
@@ -34,7 +36,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
         // previous versions can be handled by comparing _oldVersion and _newVersion
         // values.
         // The simplest case is to drop the old table and create a new one.
-        _db.execSQL("DROP TABLE IF EXISTS " + "TEMPLATE");
+        _db.execSQL("DROP TABLE IF EXISTS " + LoginDataBaseAdapter.CREATE_TABLE_USER);
         // Create a new one.
         onCreate(_db);
     }

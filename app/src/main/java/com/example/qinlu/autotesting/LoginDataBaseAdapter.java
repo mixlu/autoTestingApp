@@ -6,16 +6,13 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 /**
  * Created by qinlu on 7/28/2016.
+ * TABLE_USER - 用来储存用户登录信息的表格
  */
 public class LoginDataBaseAdapter
 {
-    static final String DATABASE_NAME = "cars.db";
     public static final String TABLE_USER = "USERS";
-    static final int DATABASE_VERSION = 1;
-    public static final int NAME_COLUMN = 1;
-    // TODO: Create public field for each column in your table.
     // SQL Statement to create a new database.
-    static final String DATABASE_CREATE = "create table " + TABLE_USER +
+    static final String CREATE_TABLE_USER = "create table " + TABLE_USER +
             "( " +"ID"+" integer primary key autoincrement,"+ "USEREMAIL text NOT NULL, USERNAME text NOT NULL, PASSWORD text NOT NULL);";
     // Variable to hold the database instance
     public  SQLiteDatabase db;
@@ -26,7 +23,7 @@ public class LoginDataBaseAdapter
     public  LoginDataBaseAdapter(Context _context)
     {
         context = _context;
-        dbHelper = new DataBaseHelper(context, DATABASE_NAME, null, DATABASE_VERSION);
+        dbHelper = new DataBaseHelper(context, DataBaseHelper.DATABASE_NAME, null, DataBaseHelper.DATABASE_VERSION);
     }
     public  LoginDataBaseAdapter open() throws SQLException
     {
