@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class CustomAdapter extends BaseAdapter {
     Context context;
     ArrayList<Model> itemModelList;
+    public static final String EMISSION_PAGE = "";
     public CustomAdapter(Context context, ArrayList<Model> modelList) {
         this.context = context;
         this.itemModelList = modelList;
@@ -54,5 +55,9 @@ public class CustomAdapter extends BaseAdapter {
             });
         }
         return convertView;
+    }
+
+    public void fillItems(ArrayList<Model> itemModelList, String dbTable) {
+        String query = "SELECT OPNAME FROM " + dbTable;
     }
 }

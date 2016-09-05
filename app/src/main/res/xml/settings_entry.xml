@@ -8,24 +8,26 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.example.qinlu.autotesting"
-                android:targetClass="com.example.qinlu.autotesting.EmissionManagement"/>
+                android:targetClass="com.example.qinlu.autotesting.EmissionInspectorManagementActivity"/>
         </Preference>
 
         <!-- 外检员 -->
-        <PreferenceScreen
-            android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$ExteriorInspectorFragmentInner"
-            android:title="@string/exterior_inspector_setting">
-            <!-- Arbitrary key/value pairs can be included for fragment arguments -->
-            <extra android:name="exterior" android:value="exteriorPage" />
-        </PreferenceScreen>
+        <Preference
+            android:title="@string/exterior_inspector">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.example.qinlu.autotesting"
+                android:targetClass="com.example.qinlu.autotesting.ExteriorInspectorManagmentActivity"/>
+        </Preference>
 
         <!-- 引车员 -->
-        <PreferenceScreen
-            android:fragment="com.example.qinlu.autotesting.EntrySettingsFragment$CommandInspectorFragmentInner"
-            android:title="@string/commander_setting">
-            <!-- Arbitrary key/value pairs can be included for fragment arguments -->
-            <extra android:name="commander" android:value="commanderPage" />
-        </PreferenceScreen>
+        <Preference
+            android:title="@string/commander">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.example.qinlu.autotesting"
+                android:targetClass="com.example.qinlu.autotesting.CommanderManagementActivity"/>
+        </Preference>
     </PreferenceCategory>
     <PreferenceCategory
         android:title="车辆信息管理">

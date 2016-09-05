@@ -20,9 +20,14 @@ public class DataBaseHelper extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase _db)
     {
-		// Create USERS Table and insert default value
+		// 创建操作员表格并且添加缺省用户
         _db.execSQL(LoginDataBaseAdapter.CREATE_TABLE_USER);
 		this.addDefaultUser(_db, "admin@admin.com", "admin", "123456");
+        _db.execSQL(InspectionDataBaseAdapter.CREATE_TABLE_EMISSION);
+        _db.execSQL(InspectionDataBaseAdapter.CREATE_TABLE_EXTERIOR);
+        _db.execSQL(InspectionDataBaseAdapter.CREATE_TABLE_COMMANDER);
+        _db.execSQL(InspectionDataBaseAdapter.CREATE_TABLE_ORG);
+        _db.execSQL(InspectionDataBaseAdapter.CREATE_TABLE_PLATE);
     }
     // Called when there is a database version mismatch meaning that the version
     // of the database on disk needs to be upgraded to the current version.
@@ -37,6 +42,11 @@ public class DataBaseHelper extends SQLiteOpenHelper
         // values.
         // The simplest case is to drop the old table and create a new one.
         _db.execSQL("DROP TABLE IF EXISTS " + LoginDataBaseAdapter.CREATE_TABLE_USER);
+        _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_EMISSION);
+        _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_EXTERIOR);
+        _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_COMMANDER);
+        _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_ORG);
+        _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_PLATE);
         // Create a new one.
         onCreate(_db);
     }

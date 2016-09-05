@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">车检系统</string>
+    <string name="btn_update">更新姓名</string>
+    <string name="btn_delete">删除此检验员</string>
 
     <!-- Strings for page_login -->
     <string name="prompt_username">用户名</string>
@@ -93,6 +95,9 @@
     <!-- Strings for settings_entry page -->
     <string name="print_setting">打印报告方式</string>
     <string name="inspection_organization_setting">检测单位</string>
+    <string name="add_new_member">添加新成员</string>
+    <string name="update_member">更新成员信息</string>
+    <string name="op_name">姓名</string>
     <string name="make_model_setting">厂牌型号</string>
     <string name="plate_prefix_setting">车牌号码前缀</string>
     <string name="emission_inspector_setting">废气检验员</string>

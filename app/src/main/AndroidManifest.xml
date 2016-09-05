@@ -48,9 +48,32 @@
 
         <!--废气检验员管理页面-->
         <activity
-            android:name=".EmissionManagement"
-            android:label="废气检验员管理"
-            android:theme="@style/PreferenceScreen">
+            android:name=".EmissionInspectorManagementActivity"
+            android:label="废气检验员管理">
+        </activity>
+
+        <!--外验员管理页面-->
+        <activity
+            android:name=".ExteriorInspectorManagementActivity"
+            android:label="外检员管理">
+        </activity>
+
+        <!--引车员管理页面-->
+        <activity
+            android:name=".CommanderManagementActivity"
+            android:label="外检员管理">
+        </activity>
+
+        <!--添加操作员-->
+        <activity android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
+            android:name=".AddItemActivity"
+            android:label="@string/settings">
+        </activity>
+
+        <!--更新操作员-->
+        <activity android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
+            android:name=".UpdateItemActivity"
+            android:label="@string/settings">
         </activity>
     </application>
 
