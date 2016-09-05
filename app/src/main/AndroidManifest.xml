@@ -64,6 +64,23 @@
             android:label="外检员管理">
         </activity>
 
+        <!--检测单位管理页面-->
+        <activity
+            android:name=".OrgManagementActivity"
+            android:label="检测单位管理">
+        </activity>
+
+        <!--车牌号码前缀管理页面-->
+        <activity
+            android:name=".PlatePrefixManagementActivity"
+            android:label="车牌前缀管理">
+        </activity>
+
+        <!--厂牌型号管理页面-->
+        <activity
+            android:name=".MakeModelManagementActivity"
+            android:label="厂牌型号管理">
+        </activity>
         <!--添加操作员-->
         <activity android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
             android:name=".AddItemActivity"

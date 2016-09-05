@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
  * TABLE_EXTERIOR - 外验员的表格
  * TABLE_COMMANDER - 存引车员的表格
  * TABLE_ORG - 检测单位的表格
+ * TABLE_MAKEMODEL - 厂牌型号的表格
  */
 public class InspectionDataBaseAdapter
 {
@@ -20,6 +21,7 @@ public class InspectionDataBaseAdapter
     public static final String TABLE_COMMANDER = "COMMANDER";
     public static final String TABLE_ORG = "ORG";
     public static final String TABLE_PLATE = "PLATEPREFIX";
+    public static final String TABLE_MAKEMODEL = "MAKEMODEL";
     // SQL Statement to create a new databases.
     static final String CREATE_TABLE_VEHICLE = "create table " + TABLE_VEHICLE + "( "
             +"ID"+" integer primary key autoincrement,"
@@ -54,6 +56,9 @@ public class InspectionDataBaseAdapter
     static final String CREATE_TABLE_PLATE = "create table " + TABLE_PLATE + "( "
             +"_id"+" integer primary key autoincrement,"
             + "PLATE_PREFIX text NOT NULL);";
+    static final String CREATE_TABLE_MAKEMODEL = "create table " + TABLE_MAKEMODEL + "( "
+            +"_id"+" integer primary key autoincrement,"
+            + "MAKE_MODLE text NOT NULL);";
     // Variable to hold the database instance
     public  SQLiteDatabase db;
     // Context of the application using the database.
@@ -81,15 +86,17 @@ public class InspectionDataBaseAdapter
     }
 
     public void insertItemToTable(String emissonName, String tableName) {
+        String colName = getRightColName(tableName);
         ContentValues contentValue = new ContentValues();
-        contentValue.put("OPNAME", emissonName);
+        contentValue.put(colName, emissonName);
         db.insert(tableName, null, contentValue);
     }
 
-    public int updateItem(long _id, String itemName, String table) {
+    public int updateItem(long _id, String itemName, String tableName) {
+        String colName = getRightColName(tableName);
         ContentValues contentValues = new ContentValues();
-        contentValues.put("OPNAME", itemName);
-        int i = db.update(table, contentValues, "_id = " + _id, null);
+        contentValues.put(colName, itemName);
+        int i = db.update(tableName, contentValues, "_id = " + _id, null);
         return i;
     }
 
@@ -97,8 +104,9 @@ public class InspectionDataBaseAdapter
         db.delete(table, "_id = " + _id, null);
     }
 
-    public boolean isExistedItem(String opName, String dbTable) {
-        Cursor cursor=db.query(dbTable, null, " OPNAME=?", new String[]{opName}, null, null, null);
+    public boolean isExistedItem(String itemName, String dbTable) {
+        String colName = getRightColName(dbTable);
+        Cursor cursor=db.query(dbTable, null, colName + "=?", new String[]{itemName}, null, null, null);
         // User Not Exist
         if(cursor.getCount()<1)
         {
@@ -109,12 +117,29 @@ public class InspectionDataBaseAdapter
     }
 
     public Cursor fetch(String tableName) {
-        String[] columns = new String[] {"_id", "OPNAME"};
+        String colName = getRightColName(tableName);
+        String[] columns = new String[] {"_id", colName};
         Cursor cursor = db.query(tableName, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
         return cursor;
+    }
+
+    private String getRightColName(String tableName) {
+        String colName = "OPNAME";
+        switch (tableName){
+            case TABLE_ORG:
+                colName = "ORGNAME";
+                break;
+            case TABLE_PLATE:
+                colName = "PLATE_PREFIX";
+                break;
+            case TABLE_MAKEMODEL:
+                colName = "MAKE_MODLE";
+                break;
+        }
+        return colName;
     }
 //    public void insertVehicle(Vehicle newveh)
 //    {

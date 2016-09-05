@@ -1,31 +1,15 @@
 package com.example.qinlu.autotesting;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 
 /**
  * Created by qinlu on 8/14/16.
@@ -84,12 +68,19 @@ public abstract class BaseItemManagementActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     public static Class getCallerClass(String fromClass) {
         if (fromClass.contains(EmissionInspectorManagementActivity.class.getName().toString())) {
             return EmissionInspectorManagementActivity.class;
         } else if (fromClass.contains(ExteriorInspectorManagementActivity.class.getName().toString())) {
             return ExteriorInspectorManagementActivity.class;
+        } else if (fromClass.contains(CommanderManagementActivity.class.getName().toString())) {
+            return CommanderManagementActivity.class;
+        } else if (fromClass.contains(OrgManagementActivity.class.getName().toString())) {
+            return OrgManagementActivity.class;
+        } else if (fromClass.contains(MakeModelManagementActivity.class.getName().toString())) {
+            return MakeModelManagementActivity.class;
+        } else if (fromClass.contains(PlatePrefixManagementActivity.class.getName().toString())) {
+            return PlatePrefixManagementActivity.class;
         }
         return null;
     }

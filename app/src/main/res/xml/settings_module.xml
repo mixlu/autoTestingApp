@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="模块设置">
-    <ListPreference android:title="@string/tel_type"
+    <com.example.qinlu.autotesting.CustomPreferenceList
+        android:title="@string/tel_type"
         android:key="listPref"
         android:defaultValue="digiGreen"
         android:entries="@array/telTypeListArray" android:entryValues="@array/telTypeListValue" />
-    <ListPreference android:title="@string/car_set"
+    <com.example.qinlu.autotesting.CustomPreferenceList
+        android:title="@string/car_set"
         android:key="listPref"
         android:defaultValue="digiGreen"
         android:entries="@array/carsetListArray" android:entryValues="@array/carsetListValue" />
-    <ListPreference android:title="@string/plateform"
+    <com.example.qinlu.autotesting.CustomPreferenceList
+        android:title="@string/plateform"
         android:key="listPref"
         android:defaultValue="digiGreen"
         android:entries="@array/plateformListArray" android:entryValues="@array/plateformListValue" />
-    <ListPreference android:title="@string/wheel_weight_ratio"
+    <com.example.qinlu.autotesting.CustomPreferenceList
+        android:title="@string/wheel_weight_ratio"
         android:key="listPref"
         android:defaultValue="digiGreen"
         android:entries="@array/wheelWeightListArray" android:entryValues="@array/wheelWeightListValue" />
-    <ListPreference android:title="@string/brake_ratio"
+    <com.example.qinlu.autotesting.CustomPreferenceList
+        android:title="@string/brake_ratio"
         android:key="listPref"
         android:defaultValue="digiGreen"
         android:entries="@array/brakerListArray" android:entryValues="@array/brakerListValue" />
-    <EditTextPreference android:name="@string/calib_value"
+    <EditTextPreference
+        android:name="@string/calib_value"
         android:defaultValue="what"
         android:summary="单位为kg"
         android:title="@string/weight_limit"

@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class ExteriorInspectorManagementActivity extends BaseItemManagementActivity {
     private SimpleCursorAdapter adapter;
     final String[] from = new String[] { "_id", "OPNAME" };
-    final int[] to = new int[] { R.id.id, R.id.opname };
+    final int[] to = new int[] { R.id.id, R.id.itemName };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class ExteriorInspectorManagementActivity extends BaseItemManagementActiv
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long viewId) {
                 TextView idTextView = (TextView) view.findViewById(R.id.id);
-                TextView nameTextView = (TextView) view.findViewById(R.id.opname);
+                TextView nameTextView = (TextView) view.findViewById(R.id.itemName);
 
                 String id = idTextView.getText().toString();
                 String name = nameTextView.getText().toString();

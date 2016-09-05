@@ -8,21 +8,22 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
- * Created by qinlu on 9/4/2016.
- * 引车员管理 页面
+ * Created by qinlu on 9/5/2016.
  */
-public class CommanderManagementActivity extends BaseItemManagementActivity {
+public class OrgManagementActivity  extends BaseItemManagementActivity {
     private SimpleCursorAdapter adapter;
-    final String[] from = new String[] { "_id", "OPNAME" };
+    final String[] from = new String[] { "_id", "ORGNAME" };
     final int[] to = new int[] { R.id.id, R.id.itemName };
+    private long _id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Cursor cursor = inspectDbManager.fetch(InspectionDataBaseAdapter.TABLE_COMMANDER);
+        Cursor cursor = inspectDbManager.fetch(InspectionDataBaseAdapter.TABLE_ORG);
 
         adapter = new SimpleCursorAdapter(this, R.layout.activity_view_record, cursor, from, to, 0);
         adapter.notifyDataSetChanged();
@@ -33,18 +34,11 @@ public class CommanderManagementActivity extends BaseItemManagementActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long viewId) {
                 TextView idTextView = (TextView) view.findViewById(R.id.id);
-                TextView nameTextView = (TextView) view.findViewById(R.id.itemName);
 
                 String id = idTextView.getText().toString();
-                String name = nameTextView.getText().toString();
-
-                Intent modify_intent = new Intent(getApplicationContext(), UpdateItemActivity.class);
-                modify_intent.putExtra("itemName", name);
-                modify_intent.putExtra("_id", id);
-                modify_intent.putExtra("opTypeTable", InspectionDataBaseAdapter.TABLE_COMMANDER);
-                modify_intent.putExtra("fromClass", this.getClass().toString());
-
-                startActivity(modify_intent);
+                _id = Long.parseLong(id);
+                // TODO: add delete item logic
+                Toast.makeText(OrgManagementActivity.this, "deleting " + id, Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -52,14 +46,14 @@ public class CommanderManagementActivity extends BaseItemManagementActivity {
      * 这个方法用于配置右上角的添加操作员的按钮
      *
      * add_mem指向了AddItemActivity类
-     * add_mem里包含了引车员需要用的数据库
+     * add_mem里包含了外检员需要用的数据库
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_record:
                 Intent add_mem = new Intent(this, AddItemActivity.class);
-                add_mem.putExtra("opTypeTable", InspectionDataBaseAdapter.TABLE_COMMANDER);
+                add_mem.putExtra("opTypeTable", InspectionDataBaseAdapter.TABLE_ORG);
                 add_mem.putExtra("fromClass", this.getClass().toString());
                 startActivity(add_mem);
                 break;

@@ -2,11 +2,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="标定制动">
     <PreferenceCategory android:title="选择标定">
-        <ListPreference android:title="@string/calib_method"
+        <com.example.qinlu.autotesting.CustomPreferenceList
+            android:title="@string/calib_method"
             android:key="listPref"
             android:defaultValue="digiGreen"
             android:entries="@array/calibMethodListArray" android:entryValues="@array/calibMethodListValue" />
-        <ListPreference android:title="@string/calib_items"
+        <com.example.qinlu.autotesting.CustomPreferenceList
+            android:title="@string/calib_items"
             android:key="listPref"
             android:defaultValue="digiGreen"
             android:entries="@array/calibItemsListArray" android:entryValues="@array/calibItemsListValue" />

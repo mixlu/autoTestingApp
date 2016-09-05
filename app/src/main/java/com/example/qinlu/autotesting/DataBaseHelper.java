@@ -47,6 +47,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
         _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_COMMANDER);
         _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_ORG);
         _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_PLATE);
+        _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_MAKEMODEL);
         // Create a new one.
         onCreate(_db);
     }
