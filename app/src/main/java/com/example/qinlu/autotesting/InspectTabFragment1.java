@@ -3,6 +3,7 @@ package com.example.qinlu.autotesting;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,21 +27,29 @@ public class InspectTabFragment1 extends Fragment{
 
     EditText plateNum;
 
-    private Spinner platePrefixSpinner;
-    private Spinner plateTypeSpinner;
+    Spinner platePrefixSpinner;
+    Spinner plateTypeSpinner;
 
     private InspectionDataBaseAdapter dbManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.tab_inspection_1, container, false);
-
         dbManager = new InspectionDataBaseAdapter(this.getActivity());
         dbManager.open();
 
         this.setUpPlatePrefixSpinner(v);
         this.setUpPlateTypeSpinner(v);
         plateNum= (EditText) v.findViewById(R.id.plate_number_text);
+
+        // Send those basic car info to next tab
+        if (platePrefixSpinner.getSelectedItem() != null && plateTypeSpinner != null) {
+            CarBasicInfoModel sendModel = new CarBasicInfoModel(
+                    platePrefixSpinner.getSelectedItem().toString(),
+                    plateNum.getText().toString(),
+                    plateTypeSpinner.getSelectedItem().toString());
+            container.setTag(sendModel);
+        }
         return v;
     }
 

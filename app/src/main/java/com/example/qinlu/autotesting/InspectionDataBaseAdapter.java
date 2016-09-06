@@ -32,6 +32,7 @@ public class InspectionDataBaseAdapter
     static final String CREATE_TABLE_VEHICLE = "create table " + TABLE_VEHICLE + "( "
             +"ID"+" integer primary key autoincrement,"
             + "PLATE_NUMBER integer NOT NULL,"
+            + "PLATE_PREFIX text NOT NULL,"
             + "ENGINE_NUMBER text NOT NULL,"
             + "MAKE_MODLE text NOT NULL,"
             + "VIN_NUMBER text NOT NULL,"
@@ -239,4 +240,17 @@ public class InspectionDataBaseAdapter
 //        db.insert(TABLE_USER, null, newValues);
 //        ///Toast.makeText(context, "Reminder Is Successfully Saved", Toast.LENGTH_LONG).show();
 //    }
+    public boolean isVehicleExisted(CarBasicInfoModel car){
+        String platePrefix = car.getPrefix();
+        String plateNum = car.getNumber();
+        String plateType = car.getType();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_VEHICLE + " WHERE PLATE_PREFIX=? AND PLATE_NUMBER=? AND PLATE_TYPE", new String[]{platePrefix, plateNum, plateType});
+        // Vehicle Not Exist
+        if(cursor.getCount()<1)
+        {
+            cursor.close();
+            return false;
+        }
+        return true;
+    }
 }

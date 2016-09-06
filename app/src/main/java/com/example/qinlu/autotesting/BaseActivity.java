@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -104,9 +105,10 @@ public abstract class BaseActivity extends AppCompatActivity implements OnNaviga
         } else if (id == R.id.nav_report) {
             Toast.makeText(BaseActivity.this, "还没开发", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_signout) {
-            // TODO: Add right behaviour to logout
             Intent i = new Intent(this, WelcomeActivity.class);
             startActivity(i);
+            // TODO: Add right behaviour to logout
+            ActivityCompat.finishAffinity(this);
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
