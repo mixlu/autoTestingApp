@@ -88,7 +88,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!--*******号牌种类*******-->
+            <!--*******厂牌型号*******-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -97,10 +97,10 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/plate_class_text"
+                    android:id="@+id/make_model_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/plate_class"/>
+                    android:text="@string/make_model"/>
 
                 <LinearLayout
                     android:layout_weight="0.6"
@@ -110,7 +110,7 @@
 
                     <EditText
 
-                        android:id="@+id/plate_class"
+                        android:id="@+id/make_model"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00000000"
@@ -197,6 +197,7 @@
             </LinearLayout>
 
             <!--*******车辆类型*******-->
+            <!--TODO: change to spinner-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -303,6 +304,7 @@
                 </LinearLayout>
 
             <!--*******车辆状况*******-->
+            <!--TODO: change to spinner-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -339,6 +341,7 @@
             </LinearLayout>
 
             <!--*******前照灯制*******-->
+            <!--TODO: change to spinner-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -447,6 +450,7 @@
             </LinearLayout>
 
             <!--*******燃油类型*******-->
+            <!--TODO: change to spinner-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -483,6 +487,7 @@
             </LinearLayout>
 
             <!--*******气液压制动*******-->
+            <!--TODO: change to spinner-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -519,6 +524,7 @@
             </LinearLayout>
 
             <!--*******驱动形式*******-->
+            <!--TODO: change to spinner-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

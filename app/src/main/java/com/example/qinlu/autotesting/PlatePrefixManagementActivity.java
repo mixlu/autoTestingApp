@@ -23,7 +23,7 @@ public class PlatePrefixManagementActivity extends BaseItemManagementActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Cursor cursor = inspectDbManager.fetch(InspectionDataBaseAdapter.TABLE_PLATE);
+        Cursor cursor = inspectDbManager.fetch(InspectionDataBaseAdapter.TABLE_PLATE_PREFIX);
 
         adapter = new SimpleCursorAdapter(this, R.layout.activity_view_record, cursor, from, to, 0);
         adapter.notifyDataSetChanged();
@@ -34,11 +34,13 @@ public class PlatePrefixManagementActivity extends BaseItemManagementActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long viewId) {
                 TextView idTextView = (TextView) view.findViewById(R.id.id);
+                TextView plateTextView = (TextView) view.findViewById(R.id.itemName);
+                String plateName = plateTextView.getText().toString();
 
                 String id = idTextView.getText().toString();
                 _id = Long.parseLong(id);
-                // TODO: add delete item logic
-                Toast.makeText(PlatePrefixManagementActivity.this, "deleting " + id, Toast.LENGTH_LONG).show();
+                // 弹出警示框，确认是否删除
+                showDeleteAlert(plateName, _id, InspectionDataBaseAdapter.TABLE_PLATE_PREFIX);
             }
         });
     }
@@ -53,7 +55,7 @@ public class PlatePrefixManagementActivity extends BaseItemManagementActivity {
         switch (item.getItemId()) {
             case R.id.add_record:
                 Intent add_mem = new Intent(this, AddItemActivity.class);
-                add_mem.putExtra("opTypeTable", InspectionDataBaseAdapter.TABLE_PLATE);
+                add_mem.putExtra("opTypeTable", InspectionDataBaseAdapter.TABLE_PLATE_PREFIX);
                 add_mem.putExtra("fromClass", this.getClass().toString());
                 startActivity(add_mem);
                 break;

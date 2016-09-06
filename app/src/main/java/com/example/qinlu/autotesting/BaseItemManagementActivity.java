@@ -1,7 +1,9 @@
 package com.example.qinlu.autotesting;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -67,7 +69,12 @@ public abstract class BaseItemManagementActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+    /**
+     * 根据被调用的类的名字返回相应类
+     *
+     * @param  fromClass  相应类的字符床名字
+     * @return      相应类
+     */
     public static Class getCallerClass(String fromClass) {
         if (fromClass.contains(EmissionInspectorManagementActivity.class.getName().toString())) {
             return EmissionInspectorManagementActivity.class;
@@ -77,11 +84,39 @@ public abstract class BaseItemManagementActivity extends AppCompatActivity {
             return CommanderManagementActivity.class;
         } else if (fromClass.contains(OrgManagementActivity.class.getName().toString())) {
             return OrgManagementActivity.class;
-        } else if (fromClass.contains(MakeModelManagementActivity.class.getName().toString())) {
-            return MakeModelManagementActivity.class;
+        } else if (fromClass.contains(PlateTypeManagementActivity.class.getName().toString())) {
+            return PlateTypeManagementActivity.class;
         } else if (fromClass.contains(PlatePrefixManagementActivity.class.getName().toString())) {
             return PlatePrefixManagementActivity.class;
         }
         return null;
+    }
+
+    /**
+     * 这个方法调用警示弹出窗口
+     * 确认用户是否真的想删除这个条目
+     *
+     * @param  itemName  要删除条目的名字
+     * @param  id 要删除条目的id
+     * @param  dbTable 相应数据库的名字
+     */
+    protected void showDeleteAlert(final String itemName, final long id, final String dbTable) {
+        new AlertDialog.Builder(this)
+                .setTitle("删除条目")
+                .setMessage("确定要删除 " + itemName + " ?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        inspectDbManager.deleteItemFromTable(id, dbTable);
+                        finish();
+                        startActivity(getIntent());
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(R.drawable.ic_warning)
+                .show();
     }
 }

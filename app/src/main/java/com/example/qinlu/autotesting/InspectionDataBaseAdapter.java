@@ -1,9 +1,14 @@
 package com.example.qinlu.autotesting;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by qinlu on 8/22/2016.
  * TABLE_VEHICLE - 车辆信息的表格
@@ -12,6 +17,7 @@ import android.database.sqlite.SQLiteDatabase;
  * TABLE_COMMANDER - 存引车员的表格
  * TABLE_ORG - 检测单位的表格
  * TABLE_MAKEMODEL - 厂牌型号的表格
+ * TABLE_PLATE - 号牌前缀的表格
  */
 public class InspectionDataBaseAdapter
 {
@@ -20,8 +26,8 @@ public class InspectionDataBaseAdapter
     public static final String TABLE_EXTERIOR = "EXTERIOR";
     public static final String TABLE_COMMANDER = "COMMANDER";
     public static final String TABLE_ORG = "ORG";
-    public static final String TABLE_PLATE = "PLATEPREFIX";
-    public static final String TABLE_MAKEMODEL = "MAKEMODEL";
+    public static final String TABLE_PLATE_PREFIX = "PLATEPREFIX";
+    public static final String TABLE_PLATE_TYPE = "PLATETYPE";
     // SQL Statement to create a new databases.
     static final String CREATE_TABLE_VEHICLE = "create table " + TABLE_VEHICLE + "( "
             +"ID"+" integer primary key autoincrement,"
@@ -53,12 +59,12 @@ public class InspectionDataBaseAdapter
     static final String CREATE_TABLE_ORG = "create table " + TABLE_ORG + "( "
             +"_id"+" integer primary key autoincrement,"
             + "ORGNAME text NOT NULL);";
-    static final String CREATE_TABLE_PLATE = "create table " + TABLE_PLATE + "( "
+    static final String CREATE_TABLE_PLATE_PREFIX = "create table " + TABLE_PLATE_PREFIX + "( "
             +"_id"+" integer primary key autoincrement,"
             + "PLATE_PREFIX text NOT NULL);";
-    static final String CREATE_TABLE_MAKEMODEL = "create table " + TABLE_MAKEMODEL + "( "
+    static final String CREATE_TABLE_PLATE_TYPE = "create table " + TABLE_PLATE_TYPE + "( "
             +"_id"+" integer primary key autoincrement,"
-            + "MAKE_MODLE text NOT NULL);";
+            + "PLATE_TYPE text NOT NULL);";
     // Variable to hold the database instance
     public  SQLiteDatabase db;
     // Context of the application using the database.
@@ -132,14 +138,83 @@ public class InspectionDataBaseAdapter
             case TABLE_ORG:
                 colName = "ORGNAME";
                 break;
-            case TABLE_PLATE:
+            case TABLE_PLATE_PREFIX:
                 colName = "PLATE_PREFIX";
                 break;
-            case TABLE_MAKEMODEL:
-                colName = "MAKE_MODLE";
+            case TABLE_PLATE_TYPE:
+                colName = "PLATE_TYPE";
                 break;
         }
         return colName;
+    }
+    public List<String> getPlatePrefix() {
+        List<String> platePrefixList = new ArrayList<String>();
+
+        Cursor cursor = db.rawQuery("SELECT PLATE_PREFIX FROM " + TABLE_PLATE_PREFIX, null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                platePrefixList.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return platePrefixList;
+    }
+
+    public List<String> getPlateType() {
+        List<String> plateTypeList = new ArrayList<String>();
+
+        Cursor cursor = db.rawQuery("SELECT PLATE_TYPE FROM " + TABLE_PLATE_TYPE, null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                plateTypeList.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return plateTypeList;
+    }
+
+    public List<String> getEmission() {
+        List<String> emissionList = new ArrayList<String>();
+
+        Cursor cursor = db.rawQuery("SELECT OPNAME FROM " + TABLE_EMISSION, null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                emissionList.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return emissionList;
+    }
+
+    public List<String> getCommander() {
+        List<String> commanderList = new ArrayList<String>();
+
+        Cursor cursor = db.rawQuery("SELECT OPNAME FROM " + TABLE_COMMANDER, null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                commanderList.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return commanderList;
+    }
+
+    public List<String> getExterior() {
+        List<String> exteriorList = new ArrayList<String>();
+
+        Cursor cursor = db.rawQuery("SELECT OPNAME FROM " + TABLE_EXTERIOR, null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                exteriorList.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return exteriorList;
     }
 //    public void insertVehicle(Vehicle newveh)
 //    {
@@ -163,48 +238,5 @@ public class InspectionDataBaseAdapter
 //        // Insert the row into your table
 //        db.insert(TABLE_USER, null, newValues);
 //        ///Toast.makeText(context, "Reminder Is Successfully Saved", Toast.LENGTH_LONG).show();
-//    }
-//    public int deleteEntry(String UserName)
-//    {
-//        //String id=String.valueOf(ID);
-//        String where="USERNAME=?";
-//        int numberOFEntriesDeleted= db.delete(TABLE_USER, where, new String[]{UserName}) ;
-//        // Toast.makeText(context, "Number fo Entry Deleted Successfully : "+numberOFEntriesDeleted, Toast.LENGTH_LONG).show();
-//        return numberOFEntriesDeleted;
-//    }
-//    public String getPwd(String userEmail)
-//    {
-//        Cursor cursor=db.query(TABLE_USER, null, " USEREMAIL=?", new String[]{userEmail}, null, null, null);
-//        if(cursor.getCount()<1) // UserName Not Exist
-//        {
-//            cursor.close();
-//            return "NOT EXIST";
-//        }
-//        cursor.moveToFirst();
-//        String password= cursor.getString(cursor.getColumnIndex("PASSWORD"));
-//        cursor.close();
-//        return password;
-//    }
-//    public Boolean isUserExist(String userEmail)
-//    {
-//        Cursor cursor=db.query(TABLE_USER, null, " USEREMAIL=?", new String[]{userEmail}, null, null, null);
-//        // User Not Exist
-//        if(cursor.getCount()<1)
-//        {
-//            cursor.close();
-//            return false;
-//        }
-//        return true;
-//    }
-//    public void updateEntry(String userName, String password)
-//    {
-//        // Define the updated row content.
-//        ContentValues updatedValues = new ContentValues();
-//        // Assign values for each row.
-//        updatedValues.put("USERNAME", userName);
-//        updatedValues.put("PASSWORD",password);
-//
-//        String where="USERNAME = ?";
-//        db.update(TABLE_USER,updatedValues, where, new String[]{userName});
 //    }
 }

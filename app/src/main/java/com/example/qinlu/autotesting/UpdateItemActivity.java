@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.regex.Pattern;
 
 /**
  * Created by qinlu on 9/4/2016.
@@ -53,7 +56,13 @@ public class UpdateItemActivity extends Activity implements View.OnClickListener
         switch (v.getId()) {
             case R.id.btn_update:
                 String name = opnameText.getText().toString();
-                // TODO: add regex check
+                // 检查是否是合法字符串
+                // TODO: add Chinese support
+                final Pattern pattern = Pattern.compile("[a-zA-Z]+");
+                if (!pattern.matcher(name).matches()) {
+                    Toast.makeText(UpdateItemActivity.this, "不能含有空格数字或其他特殊字符，请重新输入", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 dbManager.updateItem(_id, name, dbTable);
                 this.returnHome(fromClass);
                 break;

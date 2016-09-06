@@ -1,8 +1,10 @@
 package com.example.qinlu.autotesting;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +20,7 @@ public class OrgManagementActivity  extends BaseItemManagementActivity {
     final String[] from = new String[] { "_id", "ORGNAME" };
     final int[] to = new int[] { R.id.id, R.id.itemName };
     private long _id;
+    private InspectionDataBaseAdapter dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,18 +33,22 @@ public class OrgManagementActivity  extends BaseItemManagementActivity {
 
         listView.setAdapter(adapter);
 
+        dbManager = new InspectionDataBaseAdapter(this);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long viewId) {
                 TextView idTextView = (TextView) view.findViewById(R.id.id);
+                TextView orgTextView = (TextView) view.findViewById(R.id.itemName);
+                String orgName = orgTextView.getText().toString();
 
                 String id = idTextView.getText().toString();
                 _id = Long.parseLong(id);
-                // TODO: add delete item logic
-                Toast.makeText(OrgManagementActivity.this, "deleting " + id, Toast.LENGTH_LONG).show();
+                // 弹出警示框，确认是否删除
+                showDeleteAlert(orgName, _id, InspectionDataBaseAdapter.TABLE_ORG);
             }
         });
     }
+
     /**
      * 这个方法用于配置右上角的添加操作员的按钮
      *

@@ -9,8 +9,7 @@
         android:id="@+id/op_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="姓名" >
+        android:ems="10" >
 
         <requestFocus />
     </EditText>

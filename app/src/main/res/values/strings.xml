@@ -31,11 +31,14 @@
     <string name="inspect">车辆检测</string>
     <string name="sign_out">退出</string>
     <string name="inspection_no">检测编号</string>
+    <string name="prompt_plate_prefix">请输入车牌前缀</string>
     <string name="plate_number">车牌号码</string>
+    <string name="prompt_plate_number">请输入车牌号码</string>
     <string name="make_model">厂牌型号</string>
     <string name="transportation_number">运输证号</string>
     <string name="vin">车架号码</string>
-    <string name="plate_class">号牌种类</string>
+    <string name="plate_type">号牌种类</string>
+    <string name="prompt_plate_type">请输入号牌种类</string>
     <string name="organization">车辆单位</string>
     <string name="engine_no">发动机号</string>
     <string name="vehicle_type">车辆类型</string>
@@ -84,6 +87,7 @@
     <string name="how_to_print">打印报告方式</string>
     <string name="browse_to_print">浏览打印</string>
     <string name="send_to_printer">直接打印</string>
+    <string name="please_select">请选择</string>
 
     <!-- Strings for settings_nav page -->
     <string name="entry_settings">录入设置</string>

@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.regex.Pattern;
+
 /**
  * Created by qinlu on 9/4/2016.
  */
@@ -24,7 +26,7 @@ public class AddItemActivity extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setTitle("添加新成员");
+        setTitle("添加新条目");
 
         setContentView(R.layout.popup_add_record);
 
@@ -45,7 +47,13 @@ public class AddItemActivity extends Activity implements OnClickListener {
         String fromClass = intent.getStringExtra("fromClass");
         if (v.getId() == R.id.add_record) {
             final String itemName = opnameEditText.getText().toString();
-            // TODO: add regex check
+            // 检查是否是合法字符串
+            // TODO: add Chinese support
+            final Pattern pattern = Pattern.compile("[a-zA-Z]+");
+            if (!pattern.matcher(itemName).matches()) {
+                Toast.makeText(AddItemActivity.this, "不能含有空格数字或其他特殊字符，请重新输入", Toast.LENGTH_LONG).show();
+                return;
+            }
             if (!dbManager.isExistedItem(itemName, opTypeDbTable)) {
                 dbManager.insertItemToTable(itemName, opTypeDbTable);
             } else {

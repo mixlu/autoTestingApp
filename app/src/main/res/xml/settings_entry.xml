@@ -40,14 +40,13 @@
                 android:targetClass="com.example.qinlu.autotesting.PlatePrefixManagementActivity"/>
         </Preference>
 
-        <!-- 厂牌型号 -->
-        <!-- 车牌号码前缀 -->
+        <!-- 号牌种类 -->
         <Preference
-            android:title="@string/make_model_setting">
+            android:title="@string/plate_type">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.example.qinlu.autotesting"
-                android:targetClass="com.example.qinlu.autotesting.MakeModelManagementActivity"/>
+                android:targetClass="com.example.qinlu.autotesting.PlateTypeManagementActivity"/>
         </Preference>
 
         <!-- 检测单位 -->

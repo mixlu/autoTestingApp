@@ -76,11 +76,12 @@
             android:label="车牌前缀管理">
         </activity>
 
-        <!--厂牌型号管理页面-->
+        <!--号牌种类管理页面-->
         <activity
-            android:name=".MakeModelManagementActivity"
-            android:label="厂牌型号管理">
+            android:name=".PlateTypeManagementActivity"
+            android:label="号牌种类管理">
         </activity>
+
         <!--添加操作员-->
         <activity android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
             android:name=".AddItemActivity"
