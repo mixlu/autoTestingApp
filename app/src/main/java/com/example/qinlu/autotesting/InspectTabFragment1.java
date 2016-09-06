@@ -38,9 +38,11 @@ public class InspectTabFragment1 extends Fragment{
         dbManager = new InspectionDataBaseAdapter(this.getActivity());
         dbManager.open();
 
+        plateNum = (EditText) v.findViewById(R.id.plate_number_text);
+
         this.setUpPlatePrefixSpinner(v);
         this.setUpPlateTypeSpinner(v);
-        plateNum= (EditText) v.findViewById(R.id.plate_number_text);
+
         return v;
     }
 

@@ -2,7 +2,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="#fff"
     android:theme="@style/InspectionTabTheme">
@@ -27,7 +27,7 @@
                 android:padding="16dp">
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/transportation_number_txt"
+                    android:id="@+id/transportation_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/transportation_number"/>
@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <EditText
-                        android:id="@+id/transportation_number"
+                        android:id="@+id/transportation_number_txt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00000000"
@@ -61,7 +61,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/vin_text"
+                    android:id="@+id/vin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/vin"/>
@@ -73,8 +73,7 @@
                     android:orientation="vertical">
 
                     <EditText
-
-                        android:id="@+id/vin"
+                        android:id="@+id/vin_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00000000"
@@ -97,7 +96,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/make_model_text"
+                    android:id="@+id/make_model"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/make_model"/>
@@ -110,7 +109,7 @@
 
                     <EditText
 
-                        android:id="@+id/make_model"
+                        android:id="@+id/make_model_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00000000"
@@ -133,7 +132,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/organization_text"
+                    android:id="@+id/organization"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/organization"/>
@@ -146,7 +145,7 @@
 
                     <EditText
 
-                        android:id="@+id/organization"
+                        android:id="@+id/organization_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00000000"
@@ -169,7 +168,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/engine_no_text"
+                    android:id="@+id/engine_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/engine_no"/>
@@ -182,7 +181,7 @@
 
                     <EditText
 
-                        android:id="@+id/engine_no"
+                        android:id="@+id/engine_no_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00000000"
@@ -197,7 +196,6 @@
             </LinearLayout>
 
             <!--*******车辆类型*******-->
-            <!--TODO: change to spinner-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -206,7 +204,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/vehicle_type_text"
+                    android:id="@+id/vehicle_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/vehicle_type"/>
@@ -217,18 +215,12 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/vehicle_type"
+                    <Spinner
+                        android:id="@+id/vehicle_type_spinner"
+                        android:paddingBottom="0dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#00000000"
-                        android:maxLines="1" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#dad8d8" />
-
+                        android:entries="@array/vehicleTypeListArray"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -241,7 +233,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/seats_number_text"
+                    android:id="@+id/seats_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/seats_number"/>
@@ -253,7 +245,7 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/seats_number"
+                        android:id="@+id/seats_number_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00000000"
@@ -275,7 +267,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/register_date_text"
+                    android:id="@+id/register_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/register_date"/>
@@ -288,13 +280,13 @@
 
                     <EditText
 
-                        android:id="@+id/register_date"
+                        android:id="@+id/register_date_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00000000"
                         android:maxLines="1"
                         android:maxLength="8"
-                        android:hint="年/月/日"/>
+                        android:hint="年月日（例如1999年7月11日，请填19990711）"/>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -304,7 +296,6 @@
                 </LinearLayout>
 
             <!--*******车辆状况*******-->
-            <!--TODO: change to spinner-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -313,7 +304,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/state_text"
+                    android:id="@+id/state"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/state"/>
@@ -324,24 +315,17 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <EditText
-
-                        android:id="@+id/state"
+                    <Spinner
+                        android:id="@+id/state_spinner"
+                        android:paddingBottom="0dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#00000000"
-                        android:maxLines="1" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#dad8d8" />
+                        android:entries="@array/stateListArray"/>
 
                 </LinearLayout>
             </LinearLayout>
 
             <!--*******前照灯制*******-->
-            <!--TODO: change to spinner-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -350,7 +334,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/headlight_type_text"
+                    android:id="@+id/headlight_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/headlight_type"/>
@@ -361,18 +345,12 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <EditText
-
-                        android:id="@+id/headlight_type"
+                    <Spinner
+                        android:id="@+id/headlight_type_spinner"
+                        android:paddingBottom="0dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#00000000"
-                        android:maxLines="1" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#dad8d8" />
+                        android:entries="@array/headlightTypeListArray"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -386,7 +364,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/vin_base_weight_text"
+                    android:id="@+id/vin_base_weight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/base_weight"/>
@@ -399,7 +377,7 @@
 
                     <EditText
 
-                        android:id="@+id/base_weight"
+                        android:id="@+id/base_weight_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00000000"
@@ -422,7 +400,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/whole_weight_text"
+                    android:id="@+id/whole_weight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/whole_weight"/>
@@ -435,7 +413,7 @@
 
                     <EditText
 
-                        android:id="@+id/whole_weight"
+                        android:id="@+id/whole_weight_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00000000"
@@ -450,7 +428,6 @@
             </LinearLayout>
 
             <!--*******燃油类型*******-->
-            <!--TODO: change to spinner-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -459,7 +436,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/fuel_type_text"
+                    android:id="@+id/fuel_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fuel_type"/>
@@ -470,24 +447,17 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <EditText
-
-                        android:id="@+id/fuel_type"
+                    <Spinner
+                        android:id="@+id/fuel_type_spinner"
+                        android:paddingBottom="0dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#00000000"
-                        android:maxLines="1" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#dad8d8" />
+                        android:entries="@array/fuelTypeListArray"/>
 
                 </LinearLayout>
             </LinearLayout>
 
             <!--*******气液压制动*******-->
-            <!--TODO: change to spinner-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -496,7 +466,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/brake_system_type_text"
+                    android:id="@+id/brake_system_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/brake_system_type"/>
@@ -507,24 +477,17 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <EditText
-
-                        android:id="@+id/brake_system_type"
+                    <Spinner
+                        android:id="@+id/brake_system_type_spinner"
+                        android:paddingBottom="0dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#00000000"
-                        android:maxLines="1" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#dad8d8" />
+                        android:entries="@array/brakeSystemTypeListArray"/>
 
                 </LinearLayout>
             </LinearLayout>
 
             <!--*******驱动形式*******-->
-            <!--TODO: change to spinner-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -533,7 +496,7 @@
 
                 <TextView
                     android:layout_weight="1"
-                    android:id="@+id/drive_wheel_text"
+                    android:id="@+id/drive_wheel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/drive_wheel"/>
@@ -544,18 +507,12 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <EditText
-
-                        android:id="@+id/drive_wheel"
+                    <Spinner
+                        android:id="@+id/drive_wheel_spinner"
+                        android:paddingBottom="0dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#00000000"
-                        android:maxLines="1" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#dad8d8" />
+                        android:entries="@array/driveWheelListArray"/>
 
                 </LinearLayout>
             </LinearLayout>
