@@ -112,4 +112,90 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+
+    <!--车辆检测－车辆详细信息-车辆类型-->
+    <string-array name="vehicleTypeListArray">
+        <item>"乘用车"</item>
+        <item>"小型客车"</item>
+        <item>"小型货车"</item>
+        <item>"大型客车"</item>
+        <item>"大型货车"</item>
+        <item>"全挂列车"</item>
+        <item>"半挂列车"</item>
+    </string-array>
+    <string-array name="vehicleTypeListValue">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+    <!--车辆检测－车辆详细信息-车辆状况-->
+    <string-array name="stateListArray">
+        <item>"在用车"</item>
+        <item>"新车"</item>
+    </string-array>
+    <string-array name="stateListValue">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!--车辆检测－车辆详细信息-前照灯制-->
+    <string-array name="headlightTypeListArray">
+        <item>"两灯制"</item>
+        <item>"四灯制"</item>
+    </string-array>
+    <string-array name="headlightTypeListValue">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!--车辆检测－车辆详细信息-燃油类型-->
+    <string-array name="fuelTypeListArray">
+        <item>"汽油"</item>
+        <item>"柴油"</item>
+        <item>"压缩天然气"</item>
+        <item>"液化石油气"</item>
+    </string-array>
+    <string-array name="fuelTypeListValue">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <!--车辆检测－车辆详细信息-气液压制动-->
+    <string-array name="brakeSystemTypeListArray">
+        <item>"液压制动"</item>
+        <item>"气压制动"</item>
+    </string-array>
+    <string-array name="brakeSystemTypeListValue">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!--车辆检测－车辆详细信息-驱动形式-->
+    <string-array name="driveWheelListArray">
+        <item>"4X2后驱后驻车"</item>
+        <item>"4X2前驱后驻车"</item>
+        <item>"4X2前驱前驻车"</item>
+        <item>"4X4前后驱后驻车"</item>
+        <item>"6X2中驱中驻车"</item>
+        <item>"6X4中后驱中驻车"</item>
+        <item>"6X4中后驱中后驻车"</item>
+        <item>"8X4双中驱双中驻车"</item>
+    </string-array>
+    <string-array name="driveWheelListValue">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
 </resources>

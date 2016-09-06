@@ -38,8 +38,11 @@ public class InspectTabFragment1 extends Fragment{
         dbManager = new InspectionDataBaseAdapter(this.getActivity());
         dbManager.open();
 
+        plateNum = (EditText) v.findViewById(R.id.plate_number_text);
+
         this.setUpPlatePrefixSpinner(v);
         this.setUpPlateTypeSpinner(v);
+<<<<<<< HEAD
         plateNum= (EditText) v.findViewById(R.id.plate_number_text);
 
         // Send those basic car info to next tab
@@ -50,6 +53,9 @@ public class InspectTabFragment1 extends Fragment{
                     plateTypeSpinner.getSelectedItem().toString());
             container.setTag(sendModel);
         }
+=======
+
+>>>>>>> 769e7afeaa4f5d7339547a34dfbdf680e3dbb8f7
         return v;
     }
 
