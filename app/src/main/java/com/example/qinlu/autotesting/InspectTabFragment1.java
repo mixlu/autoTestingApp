@@ -3,6 +3,7 @@ package com.example.qinlu.autotesting;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +43,18 @@ public class InspectTabFragment1 extends Fragment{
         this.setUpPlatePrefixSpinner(v);
         this.setUpPlateTypeSpinner(v);
         plateNum= (EditText) v.findViewById(R.id.plate_number_text);
+        // 格式检查
+        plateNum.setOnFocusChangeListener((new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    // TODO: Add function isPlateNumValid and add check logic here
+                    if (TextUtils.isEmpty(plateNum.getText().toString())) {
+                        plateNum.setError(getString(R.string.error_field_required));
+                    }
+                }
+            }
+        }));
 
         // Send those basic car info to next tab
         if (platePrefixSpinner.getSelectedItem() != null && plateTypeSpinner != null) {

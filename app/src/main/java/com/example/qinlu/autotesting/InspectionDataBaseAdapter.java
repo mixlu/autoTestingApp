@@ -253,4 +253,9 @@ public class InspectionDataBaseAdapter
         }
         return true;
     }
+
+    public VehicleModel getVehInfo(CarBasicInfoModel car){
+        VehicleModel veh = null;
+        return veh;
+    }
 }

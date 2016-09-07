@@ -11,6 +11,8 @@ public class CarBasicInfoModel {
     String platePrefix;
     String plateNumber;
     String plateType;
+    private InspectionDataBaseAdapter dbManager;
+
     public CarBasicInfoModel(String prefix, String num, String type) {
         this.platePrefix = prefix;
         this.plateNumber = num;

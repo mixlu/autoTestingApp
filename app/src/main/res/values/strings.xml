@@ -88,6 +88,7 @@
     <string name="browse_to_print">浏览打印</string>
     <string name="send_to_printer">直接打印</string>
     <string name="please_select">请选择</string>
+    <string name="invalid_input">格式不正确</string>
 
     <!-- Strings for settings_nav page -->
     <string name="entry_settings">录入设置</string>
