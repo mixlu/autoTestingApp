@@ -79,11 +79,11 @@
 
     <PreferenceCategory
         android:title="打印报告方式选择">
-    <!-- 打印方式选择 -->
-    <com.example.qinlu.autotesting.CustomPreferenceList
-        android:key="PRINT_LIST"
-        android:title="@string/print_setting"
-        android:entries="@array/printListArray"
-        android:entryValues="@array/printListValue" />
+        <!-- 打印方式选择 -->
+        <com.example.qinlu.autotesting.CustomPreferenceList
+            android:key="PRINT_LIST"
+            android:title="@string/print_setting"
+            android:entries="@array/printListArray"
+            android:entryValues="@array/printListValue" />
     </PreferenceCategory>
 </PreferenceScreen>

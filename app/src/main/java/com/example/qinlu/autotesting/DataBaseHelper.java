@@ -30,6 +30,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
         _db.execSQL(InspectionDataBaseAdapter.CREATE_TABLE_PLATE_PREFIX);
         _db.execSQL(InspectionDataBaseAdapter.CREATE_TABLE_PLATE_TYPE);
         _db.execSQL(InspectionDataBaseAdapter.CREATE_TABLE_VEHICLE);
+        _db.execSQL(InspectionDataBaseAdapter.CREATE_TABLE_REPORT);
     }
     // Called when there is a database version mismatch meaning that the version
     // of the database on disk needs to be upgraded to the current version.
@@ -51,6 +52,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
         _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_PLATE_PREFIX);
         _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_PLATE_TYPE);
         _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_VEHICLE);
+        _db.execSQL("DROP TABLE IF EXISTS " + InspectionDataBaseAdapter.CREATE_TABLE_REPORT);
         // Create a new one.
         onCreate(_db);
     }

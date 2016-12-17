@@ -4,15 +4,14 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.qinlu.autotesting.model.VehicleModel;
 
 /**
  * 这个页面是检测页面的第二个tab-车辆详细信息的类
@@ -20,10 +19,10 @@ import android.widget.Toast;
  */
 public class InspectTabFragment2 extends Fragment{
     boolean isLoaded = false;
-    String platePrefix;
-    String plateNum;
-    String plateType;
-    CarBasicInfoModel reveivedCar;
+    public String platePrefix;
+    public String plateNum;
+    public String plateType;
+    public CarBasicInfoModel reveivedCar;
     private InspectionDataBaseAdapter dbManager;
 
     EditText transportationNum;
@@ -193,12 +192,16 @@ public class InspectTabFragment2 extends Fragment{
         if (this.isVisible() && !isLoaded) {
             if (isValidReceivedCar()) {
                 // Check if database existed the auto already
-                if(dbManager.isVehicleExisted(reveivedCar)){
-                    Toast.makeText(this.getActivity(), "Auto Filled", Toast.LENGTH_SHORT).show();
-                    VehicleModel veh = dbManager.getVehInfo(reveivedCar);
+                VehicleModel veh = dbManager.getVehInfo(reveivedCar);
+                if (veh != null) {
+                    Toast.makeText(this.getActivity(), "正在加载车辆详细信息，请确认车辆信息是否正确", Toast.LENGTH_SHORT).show();
                     this.autoFillPage(veh);
                 }
+            } else {
+                Toast.makeText(this.getActivity(), "第一个页面的车辆基本信息还未完成", Toast.LENGTH_SHORT).show();
             }
+
+            //TODO: Only for debug, can be deleted
             if (!isVisibleToUser) {
                 Log.d(this.getActivity().toString(), "not visible anymore");
             }
@@ -232,7 +235,9 @@ public class InspectTabFragment2 extends Fragment{
      * @params veh - 车辆详细信息
      * 这个方法根据车辆详细信息自动填充所有输入框
      */
+    // TODO: finish the method
     private void autoFillPage(VehicleModel veh){
+        // TODO: Add precondition check
 
     }
 }

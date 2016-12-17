@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.qinlu.autotesting.model.VehicleModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,7 @@ import java.util.List;
  * TABLE_ORG - 检测单位的表格
  * TABLE_MAKEMODEL - 厂牌型号的表格
  * TABLE_PLATE - 号牌前缀的表格
+ * TABLE_REPORT - 报告表格
  */
 public class InspectionDataBaseAdapter
 {
@@ -28,13 +31,15 @@ public class InspectionDataBaseAdapter
     public static final String TABLE_ORG = "ORG";
     public static final String TABLE_PLATE_PREFIX = "PLATEPREFIX";
     public static final String TABLE_PLATE_TYPE = "PLATETYPE";
+    public static final String TABLE_REPORT = "REPORT";
+
     // SQL Statement to create a new databases.
     static final String CREATE_TABLE_VEHICLE = "create table " + TABLE_VEHICLE + "( "
-            +"ID"+" integer primary key autoincrement,"
+            + "ID integer primary key autoincrement,"
             + "PLATE_NUMBER integer NOT NULL,"
             + "PLATE_PREFIX text NOT NULL,"
             + "ENGINE_NUMBER text NOT NULL,"
-            + "MAKE_MODLE text NOT NULL,"
+            + "MAKE_MODEL text NOT NULL,"
             + "VIN_NUMBER text NOT NULL,"
             + "OWNER_NAME text NOT NULL,"
             + "VEH_TYPE text NOT NULL,"
@@ -49,23 +54,98 @@ public class InspectionDataBaseAdapter
             + "LICENCE_NUMBER text NOT NULL,"
             + "BRAKE_TYPE text NOT NULL);";
     static final String CREATE_TABLE_EMISSION = "create table " + TABLE_EMISSION + "( "
-            +"_id"+" integer primary key autoincrement,"
+            + "ID integer primary key autoincrement,"
             + "OPNAME text NOT NULL);";
     static final String CREATE_TABLE_EXTERIOR = "create table " + TABLE_EXTERIOR + "( "
-            +"_id"+" integer primary key autoincrement,"
+            + "ID integer primary key autoincrement,"
             + "OPNAME text NOT NULL);";
     static final String CREATE_TABLE_COMMANDER = "create table " + TABLE_COMMANDER + "( "
-            +"_id"+" integer primary key autoincrement,"
+            + "ID integer primary key autoincrement,"
             + "OPNAME text NOT NULL);";
     static final String CREATE_TABLE_ORG = "create table " + TABLE_ORG + "( "
-            +"_id"+" integer primary key autoincrement,"
+            + "ID integer primary key autoincrement,"
             + "ORGNAME text NOT NULL);";
     static final String CREATE_TABLE_PLATE_PREFIX = "create table " + TABLE_PLATE_PREFIX + "( "
-            +"_id"+" integer primary key autoincrement,"
+            + "ID integer primary key autoincrement,"
             + "PLATE_PREFIX text NOT NULL);";
     static final String CREATE_TABLE_PLATE_TYPE = "create table " + TABLE_PLATE_TYPE + "( "
-            +"_id"+" integer primary key autoincrement,"
+            + "ID integer primary key autoincrement,"
             + "PLATE_TYPE text NOT NULL);";
+    static final String CREATE_TABLE_REPORT = "create table " + TABLE_REPORT + "( "
+            + "ID INTEGER primary key autoincrement,"
+            + "VEC_ID INTEGER NOT NULL,"
+            + "CREATE_DATE DATETIME NOT NULL,"
+            + "EMISSION INTEGER NOT NULL,"
+            + "EXTERIOR INTEGER NOT NULL,"
+            + "COMMANDER INTEGER NOT NULL,"
+            + "IS_TESTED INTEGER DEFAULT 0,"
+            + "SHAFT1_WHEEL_L TEXT,"
+            + "SHAFT1_WHEEL_R TEXT,"
+            + "SHAFT1_WHEEL_D_L TEXT,"
+            + "SHAFT1_WHEEL_D_R TEXT,"
+            + "SHAFT1_BRAKE_L TEXT,"
+            + "SHAFT1_BRAKE_R TEXT,"
+            + "SHAFT1_DIFF_L TEXT,"
+            + "SHAFT1_DIFF_R TEXT,"
+            + "SHAFT1_BRAKE_RATIO TEXT,"
+            + "SHAFT1_BALANCE_RATIO TEXT,"
+            + "SHAFT1_RATE TEXT,"
+            + "SHAFT1_BALANCE_RATE TEXT,"
+            + "SHAFT1_BRAKE_BALANCE_RATE TEXT,"
+            + "SHAFT2_WHEEL_L TEXT,"
+            + "SHAFT2_WHEEL_R TEXT,"
+            + "SHAFT2_WHEEL_D_L TEXT,"
+            + "SHAFT2_WHEEL_D_R TEXT,"
+            + "SHAFT2_BRAKE_L TEXT,"
+            + "SHAFT2_BRAKE_R TEXT,"
+            + "SHAFT2_DIFF_L TEXT,"
+            + "SHAFT2_DIFF_R TEXT,"
+            + "SHAFT2_BRAKE_RATIO TEXT,"
+            + "SHAFT2_BALANCE_RATIO TEXT,"
+            + "SHAFT2_RATE TEXT,"
+            + "SHAFT2_BALANCE_RATE TEXT,"
+            + "SHAFT2_BRAKE_BALANCE_RATE TEXT,"
+            + "SHAFT3_WHEEL_L TEXT,"
+            + "SHAFT3_WHEEL_R TEXT,"
+            + "SHAFT3_WHEEL_D_L TEXT,"
+            + "SHAFT3_WHEEL_D_R TEXT,"
+            + "SHAFT3_BRAKE_L TEXT,"
+            + "SHAFT3_BRAKE_R TEXT,"
+            + "SHAFT3_DIFF_L TEXT,"
+            + "SHAFT3_DIFF_R TEXT,"
+            + "SHAFT3_BRAKE_RATIO TEXT,"
+            + "SHAFT3_BALANCE_RATIO TEXT,"
+            + "SHAFT3_RATE TEXT,"
+            + "SHAFT3_BALANCE_RATE TEXT,"
+            + "SHAFT3_BRAKE_BALANCE_RATE TEXT,"
+            + "SHAFT4_WHEEL_L TEXT,"
+            + "SHAFT4_WHEEL_R TEXT,"
+            + "SHAFT4_WHEEL_D_L TEXT,"
+            + "SHAFT4_WHEEL_D_R TEXT,"
+            + "SHAFT4_BRAKE_L TEXT,"
+            + "SHAFT4_BRAKE_R TEXT,"
+            + "SHAFT4_DIFF_L TEXT,"
+            + "SHAFT4_DIFF_R TEXT,"
+            + "SHAFT4_BRAKE_RATIO TEXT,"
+            + "SHAFT4_BALANCE_RATIO TEXT,"
+            + "SHAFT4_RATE TEXT,"
+            + "SHAFT4_BALANCE_RATE TEXT,"
+            + "SHAFT4_BRAKE_BALANCE_RATE TEXT,"
+            + "BRAKE_RATE_L TEXT,"
+            + "BRAKE_RATE_R TEXT,"
+            + "MANUAL_BRAKE_RATIO TEXT,"
+            + "PARK_RATE TEXT,"
+            + "VEC_WEIGHT TEXT,"
+            + "VEC_BRAKE TEXT,"
+            + "VEC_BRAKE_RATIO TEXT,"
+            + "VEC_BRAKE_RATIO_RATE TEXT,"
+            + "SLIDE TEXT,"
+            + "SLIDE_RATE TEXT,"
+            + "FOREIGN KEY(VEC_ID) REFERENCES " + TABLE_VEHICLE + "(ID),"
+            + "FOREIGN KEY(EMISSION) REFERENCES " + TABLE_EMISSION + "(ID),"
+            + "FOREIGN KEY(EXTERIOR) REFERENCES " + TABLE_EXTERIOR + "(ID),"
+            + "FOREIGN KEY(COMMANDER) REFERENCES " + TABLE_COMMANDER + "(ID)"
+            + ");";
     // Variable to hold the database instance
     public  SQLiteDatabase db;
     // Context of the application using the database.
@@ -217,29 +297,33 @@ public class InspectionDataBaseAdapter
         cursor.close();
         return exteriorList;
     }
-//    public void insertVehicle(Vehicle newveh)
-//    {
-//        ContentValues newValues = new ContentValues();
-//        newValues.put("PLATE_NUMBER", newveh);
-//        newValues.put("ENGINE_NUMBER", userName);
-//        newValues.put("MAKE_MODLE",password);
-//        newValues.put("VIN_NUMBER", userEmail);
-//        newValues.put("OWNER_NAME", userName);
-//        newValues.put("SEAT_NUMBER",password);
-//        newValues.put("BASE_WEIGHT", userEmail);
-//        newValues.put("WHOLE_WEIGHT", userName);
-//        newValues.put("CONDITION_LEVEL",password);
-//        newValues.put("LIGHT_TYPE", userEmail);
-//        newValues.put("PLATE_TYPE", userName);
-//        newValues.put("LICENCE_NUMBER",password);
-//        newValues.put("BRAKE_TYPE", userEmail);
-//        newValues.put("ENGINE_NUMBER", userName);
-//        newValues.put("MAKE_MODLE",password);
-//
-//        // Insert the row into your table
-//        db.insert(TABLE_USER, null, newValues);
-//        ///Toast.makeText(context, "Reminder Is Successfully Saved", Toast.LENGTH_LONG).show();
-//    }
+
+    // TODO: Add precondition not null check
+    public void insertVehicle(VehicleModel newVeh)
+    {
+        ContentValues newValues = new ContentValues();
+        newValues.put("PLATE_NUMBER", newVeh.getPlateNumber());
+        newValues.put("PLATE_PREFIX", newVeh.getPlatePrefix());
+        newValues.put("ENGINE_NUMBER", newVeh.getEngineNumber());
+        newValues.put("MAKE_MODEL", newVeh.getMakeModel());
+        newValues.put("VIN_NUMBER", newVeh.getVinNumber());
+        newValues.put("OWNER_NAME", newVeh.getOwner());
+        newValues.put("VEH_TYPE", newVeh.getVehType());
+        newValues.put("REGISTER_DATE", newVeh.getRegisterDate().toString());
+        newValues.put("FUEL_TYPE", newVeh.getFuleType());
+        newValues.put("SEAT_NUMBER", newVeh.getSeatNumber());
+        newValues.put("BASE_WEIGHT", newVeh.getBaseWeight());
+        newValues.put("WHOLE_WEIGHT", newVeh.getWholeWeight());
+        newValues.put("CONDITION_LEVEL", newVeh.getConditionLevel());
+        newValues.put("LIGHT_TYPE", newVeh.getLightType());
+        newValues.put("PLATE_TYPE", newVeh.getPlateType());
+        newValues.put("LICENCE_NUMBER", newVeh.getLicenseNumber());
+        newValues.put("BRAKE_TYPE", newVeh.getBrakeType());
+
+        // Insert the row into VEHICLE table
+        db.insert(TABLE_VEHICLE, null, newValues);
+    }
+
     public boolean isVehicleExisted(CarBasicInfoModel car){
         String platePrefix = car.getPrefix();
         String plateNum = car.getNumber();
@@ -254,8 +338,43 @@ public class InspectionDataBaseAdapter
         return true;
     }
 
+    /* Get vehicle whole information from database by given basic veh info
+     * @return vehicle model
+     */
     public VehicleModel getVehInfo(CarBasicInfoModel car){
-        VehicleModel veh = null;
+        VehicleModel veh = new VehicleModel();
+        if (isVehicleExisted(car)) {
+            String platePrefix = car.getPrefix();
+            String plateNum = car.getNumber();
+            String plateType = car.getType();
+            Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_VEHICLE + " WHERE PLATE_PREFIX=? AND PLATE_NUMBER=? AND PLATE_TYPE", new String[]{platePrefix, plateNum, plateType});
+
+            veh.setPlatePrefix(cursor.getString(cursor.getColumnIndex("PLATE_NUMBER")));
+            veh.setPlateNumber(cursor.getInt(cursor.getColumnIndex("PLATE_PREFIX")));
+            veh.setEngineNumber(cursor.getString(cursor.getColumnIndex("ENGINE_NUMBER")));
+            veh.setMakeModel(cursor.getString(cursor.getColumnIndex("MAKE_MODEL")));
+            veh.setVinNumber(cursor.getString(cursor.getColumnIndex("VIN_NUMBER")));
+            veh.setOwner(cursor.getString(cursor.getColumnIndex("OWNER_NAME")));
+            veh.setVehType(cursor.getString(cursor.getColumnIndex("VEH_TYPE")));
+            veh.setRegisterDate(cursor.getString(cursor.getColumnIndex("REGISTER_DATE")));
+            veh.setFuleType(cursor.getString(cursor.getColumnIndex("FUEL_TYPE")));
+            veh.setSeatNumber(cursor.getInt(cursor.getColumnIndex("SEAT_NUMBER")));
+            veh.setBaseWeight(cursor.getInt(cursor.getColumnIndex("BASE_WEIGHT")));
+            veh.setWholeWeight(cursor.getInt(cursor.getColumnIndex("WHOLE_WEIGHT")));
+            veh.setConditionLevel(cursor.getString(cursor.getColumnIndex("CONDITION_LEVEL")));
+            veh.setLightType(cursor.getString(cursor.getColumnIndex("LIGHT_TYPE")));
+            veh.setPlateType(cursor.getString(cursor.getColumnIndex("PLATE_TYPE")));
+            veh.setLicenseNumber(cursor.getString(cursor.getColumnIndex("LICENCE_NUMBER")));
+            veh.setBrakeType(cursor.getString(cursor.getColumnIndex("BRAKE_TYPE")));
+        }
         return veh;
+    }
+
+    public void addReport(CarBasicInfoModel car, int emission, int commandor, int exterior) {
+
+    }
+
+    public void updateReport() {
+
     }
 }

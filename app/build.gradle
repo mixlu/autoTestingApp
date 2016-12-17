@@ -24,5 +24,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:design:24.1.1'
+    compile 'org.projectlombok:lombok:1.16.10'
     compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'javax.annotation:jsr250-api:1.0'
 }
