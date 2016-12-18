@@ -15,7 +15,7 @@ import android.widget.TextView;
  */
 public class ExteriorInspectorManagementActivity extends BaseItemManagementActivity {
     private SimpleCursorAdapter adapter;
-    final String[] from = new String[] { "_id", "OPNAME" };
+    final String[] from = new String[] { "ID", "OPNAME" };
     final int[] to = new int[] { R.id.id, R.id.itemName };
 
     @Override
@@ -40,7 +40,7 @@ public class ExteriorInspectorManagementActivity extends BaseItemManagementActiv
 
                 Intent modify_intent = new Intent(getApplicationContext(), UpdateItemActivity.class);
                 modify_intent.putExtra("itemName", name);
-                modify_intent.putExtra("_id", id);
+                modify_intent.putExtra("id", id);
                 modify_intent.putExtra("opTypeTable", InspectionDataBaseAdapter.TABLE_EXTERIOR);
                 modify_intent.putExtra("fromClass", this.getClass().toString());
 

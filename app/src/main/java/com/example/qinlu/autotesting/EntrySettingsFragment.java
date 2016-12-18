@@ -1,28 +1,19 @@
 package com.example.qinlu.autotesting;
 
-import java.util.ArrayList;
-
-import android.app.ListActivity;
+import android.os.Bundle;
+import android.preference.PreferenceFragment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.util.SparseBooleanArray;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.preference.PreferenceFragment;;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 
 /**
  * Created by qinlu on 8/10/16.
  * 录入设置 fragments.
  */
-public class EntrySettingsFragment extends ToolbarPreferenceFragment {
+public class EntrySettingsFragment extends SettingsPreferenceFragment {
     private static final String TAG = "EntrySettingsFragment";
 
     @Override
@@ -80,7 +71,7 @@ public class EntrySettingsFragment extends ToolbarPreferenceFragment {
     /**
      * 选择已有设备 Fragment
      */
-    public static class EquipmentFragmentInner extends ToolbarPreferenceFragment {
+    public static class EquipmentFragmentInner extends SettingsPreferenceFragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);

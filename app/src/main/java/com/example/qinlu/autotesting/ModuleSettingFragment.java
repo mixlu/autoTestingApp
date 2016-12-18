@@ -6,7 +6,7 @@ import android.preference.Preference;
 /**
  * Created by qinlu on 8/17/16.
  */
-public class ModuleSettingFragment extends ToolbarPreferenceFragment {
+public class ModuleSettingFragment extends SettingsPreferenceFragment {
     private final String TAG = "ModuleSetting";
     @Override
     public void onCreate(Bundle savedInstanceState) {

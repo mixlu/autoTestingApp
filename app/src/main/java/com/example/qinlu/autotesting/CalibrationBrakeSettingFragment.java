@@ -1,14 +1,8 @@
 package com.example.qinlu.autotesting;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.preference.Preference;
-import android.text.Html;
-import android.text.Spanned;
-import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.view.LayoutInflater;
 import android.webkit.WebView;
@@ -17,7 +11,7 @@ import android.webkit.WebView;
  * Created by qinlu on 8/17/16.
  * 标定制动设置 fragment
  */
-public class CalibrationBrakeSettingFragment extends ToolbarPreferenceFragment{
+public class CalibrationBrakeSettingFragment extends SettingsPreferenceFragment {
     private final String TAG = "CalibrationB";
     @Override
     public void onCreate(Bundle savedInstanceState) {

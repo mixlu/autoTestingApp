@@ -39,7 +39,7 @@ public class UpdateItemActivity extends Activity implements View.OnClickListener
         updateBtn = (Button) findViewById(R.id.btn_update);
         deleteBtn = (Button) findViewById(R.id.btn_delete);
         intent = getIntent();
-        String id = intent.getStringExtra("_id");
+        String id = intent.getStringExtra("id");
         String name = intent.getStringExtra("itemName");
         _id = Long.parseLong(id);
 

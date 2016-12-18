@@ -179,16 +179,16 @@ public class InspectionDataBaseAdapter
         db.insert(tableName, null, contentValue);
     }
 
-    public int updateItem(long _id, String itemName, String tableName) {
+    public int updateItem(long id, String itemName, String tableName) {
         String colName = getRightColName(tableName);
         ContentValues contentValues = new ContentValues();
         contentValues.put(colName, itemName);
-        int i = db.update(tableName, contentValues, "_id = " + _id, null);
+        int i = db.update(tableName, contentValues, "ID = " + id, null);
         return i;
     }
 
-    public void deleteItemFromTable(long _id, String table) {
-        db.delete(table, "_id = " + _id, null);
+    public void deleteItemFromTable(long id, String table) {
+        db.delete(table, "ID = " + id, null);
     }
 
     public boolean isExistedItem(String itemName, String dbTable) {
@@ -205,7 +205,7 @@ public class InspectionDataBaseAdapter
 
     public Cursor fetch(String tableName) {
         String colName = getRightColName(tableName);
-        String[] columns = new String[] {"_id", colName};
+        String[] columns = new String[] {"ID", colName};
         Cursor cursor = db.query(tableName, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();

@@ -24,7 +24,7 @@ import java.util.ArrayList;
  */
 public class EmissionInspectorManagementActivity extends BaseItemManagementActivity {
     private SimpleCursorAdapter adapter;
-    final String[] from = new String[] { "_id", "OPNAME" };
+    final String[] from = new String[] { "ID", "OPNAME" };
     final int[] to = new int[] { R.id.id, R.id.itemName };
 
     /**
@@ -55,7 +55,7 @@ public class EmissionInspectorManagementActivity extends BaseItemManagementActiv
 
                 Intent modify_intent = new Intent(getApplicationContext(), UpdateItemActivity.class);
                 modify_intent.putExtra("itemName", name);
-                modify_intent.putExtra("_id", id);
+                modify_intent.putExtra("id", id);
                 modify_intent.putExtra("opTypeTable", InspectionDataBaseAdapter.TABLE_EMISSION);
                 modify_intent.putExtra("fromClass", this.getClass().toString());
 
