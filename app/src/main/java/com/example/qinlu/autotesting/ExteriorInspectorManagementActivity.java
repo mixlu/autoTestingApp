@@ -15,7 +15,7 @@ import android.widget.TextView;
  */
 public class ExteriorInspectorManagementActivity extends BaseItemManagementActivity {
     private SimpleCursorAdapter adapter;
-    final String[] from = new String[] { "ID", "OPNAME" };
+    final String[] from = new String[] { "_id", "OPNAME" };
     final int[] to = new int[] { R.id.id, R.id.itemName };
 
     @Override

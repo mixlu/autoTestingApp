@@ -35,7 +35,7 @@ public class InspectionDataBaseAdapter
 
     // SQL Statement to create a new databases.
     static final String CREATE_TABLE_VEHICLE = "create table " + TABLE_VEHICLE + "( "
-            + "ID integer primary key autoincrement,"
+            + "_id integer primary key autoincrement,"
             + "PLATE_NUMBER integer NOT NULL,"
             + "PLATE_PREFIX text NOT NULL,"
             + "ENGINE_NUMBER text NOT NULL,"
@@ -54,25 +54,25 @@ public class InspectionDataBaseAdapter
             + "LICENCE_NUMBER text NOT NULL,"
             + "BRAKE_TYPE text NOT NULL);";
     static final String CREATE_TABLE_EMISSION = "create table " + TABLE_EMISSION + "( "
-            + "ID integer primary key autoincrement,"
+            + "_id integer primary key autoincrement,"
             + "OPNAME text NOT NULL);";
     static final String CREATE_TABLE_EXTERIOR = "create table " + TABLE_EXTERIOR + "( "
-            + "ID integer primary key autoincrement,"
+            + "_id integer primary key autoincrement,"
             + "OPNAME text NOT NULL);";
     static final String CREATE_TABLE_COMMANDER = "create table " + TABLE_COMMANDER + "( "
-            + "ID integer primary key autoincrement,"
+            + "_id integer primary key autoincrement,"
             + "OPNAME text NOT NULL);";
     static final String CREATE_TABLE_ORG = "create table " + TABLE_ORG + "( "
-            + "ID integer primary key autoincrement,"
+            + "_id integer primary key autoincrement,"
             + "ORGNAME text NOT NULL);";
     static final String CREATE_TABLE_PLATE_PREFIX = "create table " + TABLE_PLATE_PREFIX + "( "
-            + "ID integer primary key autoincrement,"
+            + "_id integer primary key autoincrement,"
             + "PLATE_PREFIX text NOT NULL);";
     static final String CREATE_TABLE_PLATE_TYPE = "create table " + TABLE_PLATE_TYPE + "( "
-            + "ID integer primary key autoincrement,"
+            + "_id integer primary key autoincrement,"
             + "PLATE_TYPE text NOT NULL);";
     static final String CREATE_TABLE_REPORT = "create table " + TABLE_REPORT + "( "
-            + "ID INTEGER primary key autoincrement,"
+            + "_id INTEGER primary key autoincrement,"
             + "VEC_ID INTEGER NOT NULL,"
             + "CREATE_DATE DATETIME NOT NULL,"
             + "EMISSION INTEGER NOT NULL,"
@@ -188,7 +188,7 @@ public class InspectionDataBaseAdapter
     }
 
     public void deleteItemFromTable(long id, String table) {
-        db.delete(table, "ID = " + id, null);
+        db.delete(table, "_id = " + id, null);
     }
 
     public boolean isExistedItem(String itemName, String dbTable) {
@@ -205,7 +205,7 @@ public class InspectionDataBaseAdapter
 
     public Cursor fetch(String tableName) {
         String colName = getRightColName(tableName);
-        String[] columns = new String[] {"ID", colName};
+        String[] columns = new String[] {"_id", colName};
         Cursor cursor = db.query(tableName, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();

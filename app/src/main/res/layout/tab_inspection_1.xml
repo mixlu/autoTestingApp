@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <Spinner
+                    <android.support.v7.widget.AppCompatSpinner
                         android:id="@+id/plate_prefix_spinner"
                         android:paddingBottom="0dp"
                         android:layout_width="match_parent"

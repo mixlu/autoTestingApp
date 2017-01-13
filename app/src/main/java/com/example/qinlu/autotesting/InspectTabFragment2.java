@@ -216,6 +216,7 @@ public class InspectTabFragment2 extends Fragment{
             this.platePrefix = reveivedCar.getPrefix();
             this.plateNum = reveivedCar.getNumber();
             this.plateType = reveivedCar.getType();
+            Toast.makeText(getActivity(), "Got car from Tab1", Toast.LENGTH_SHORT).show();
         }
     }
     /*

@@ -15,6 +15,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,16 +50,18 @@ public class InspectTabFragment1 extends Fragment{
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
-                    // TODO: Add function isPlateNumValid and add check logic here
                     if (TextUtils.isEmpty(plateNum.getText().toString())) {
                         plateNum.setError(getString(R.string.error_field_required));
+                    } else if ( !plateNum.getText().toString().matches("\\\\b[a-zA-Z0-9]{5}\\\\b") ) {
+                        Toast.makeText(getActivity(), plateNum.getText().toString(), Toast.LENGTH_SHORT).show();
+                        plateNum.setError("车牌号码格式不正确");
                     }
                 }
             }
         }));
 
         // Send those basic car info to next tab
-        if (platePrefixSpinner.getSelectedItem() != null && plateTypeSpinner != null) {
+        if (platePrefixSpinner.getSelectedItem() != null && plateTypeSpinner != null && plateNum.getText() != null) {
             CarBasicInfoModel sendModel = new CarBasicInfoModel(
                     platePrefixSpinner.getSelectedItem().toString(),
                     plateNum.getText().toString(),
@@ -70,6 +74,7 @@ public class InspectTabFragment1 extends Fragment{
     private void setUpPlatePrefixSpinner(View v){
         List<String> platePrefixData = dbManager.getPlatePrefix();
         platePrefixSpinner = (Spinner) v.findViewById(R.id.plate_prefix_spinner);
+        platePrefixSpinner.setPrompt("Please enter");
         ArrayAdapter<String> platePrefixAdapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, platePrefixData);
         platePrefixAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         platePrefixSpinner.setAdapter(platePrefixAdapter);
@@ -78,10 +83,8 @@ public class InspectTabFragment1 extends Fragment{
     public void setUpPlateTypeSpinner(View v) {
         List<String> plateTypes = dbManager.getPlateType();
         plateTypeSpinner = (Spinner) v.findViewById(R.id.plate_type_spinner);
-
         ArrayAdapter<String> plateTypeAdapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, plateTypes);
         plateTypeAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-
         plateTypeSpinner.setAdapter(plateTypeAdapter);
     }
 }

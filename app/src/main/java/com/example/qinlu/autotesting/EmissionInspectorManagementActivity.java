@@ -24,7 +24,7 @@ import java.util.ArrayList;
  */
 public class EmissionInspectorManagementActivity extends BaseItemManagementActivity {
     private SimpleCursorAdapter adapter;
-    final String[] from = new String[] { "ID", "OPNAME" };
+    final String[] from = new String[] { "_id", "OPNAME" };
     final int[] to = new int[] { R.id.id, R.id.itemName };
 
     /**
