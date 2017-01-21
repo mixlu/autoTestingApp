@@ -198,4 +198,19 @@
         <item>8</item>
     </string-array>
 
+    <!--车牌前缀缺省值-->
+    <string-array name="platePrefixList">
+        <item>粤A</item>
+        <item>粤B</item>
+        <item>粤C</item>
+        <item>粤D</item>
+    </string-array>
+
+    <!--车牌种类缺省值-->
+    <string-array name="plateTypeList">
+        <item>蓝色车牌</item>
+        <item>黑色车牌</item>
+        <item>黄色车牌</item>
+        <item>白色车牌</item>
+    </string-array>
 </resources>

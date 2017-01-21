@@ -38,4 +38,13 @@
             android:targetClass="com.example.qinlu.autotesting.RegisterActivity"/>
     </header>
 
+    <!--用户管理目录-->
+    <header
+        android:icon="@drawable/ic_home"
+        android:title="返回主界面">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.example.qinlu.autotesting"
+            android:targetClass="com.example.qinlu.autotesting.InspectionActivity"/>
+    </header>
 </preference-headers>

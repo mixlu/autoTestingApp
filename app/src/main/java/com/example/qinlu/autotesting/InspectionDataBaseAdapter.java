@@ -11,6 +11,7 @@ import com.example.qinlu.autotesting.model.VehicleModel;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * Created by qinlu on 8/22/2016.
  * TABLE_VEHICLE - 车辆信息的表格
@@ -350,7 +351,7 @@ public class InspectionDataBaseAdapter
             Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_VEHICLE + " WHERE PLATE_PREFIX=? AND PLATE_NUMBER=? AND PLATE_TYPE", new String[]{platePrefix, plateNum, plateType});
 
             veh.setPlatePrefix(cursor.getString(cursor.getColumnIndex("PLATE_NUMBER")));
-            veh.setPlateNumber(cursor.getInt(cursor.getColumnIndex("PLATE_PREFIX")));
+            veh.setPlateNumber(cursor.getString(cursor.getColumnIndex("PLATE_PREFIX")));
             veh.setEngineNumber(cursor.getString(cursor.getColumnIndex("ENGINE_NUMBER")));
             veh.setMakeModel(cursor.getString(cursor.getColumnIndex("MAKE_MODEL")));
             veh.setVinNumber(cursor.getString(cursor.getColumnIndex("VIN_NUMBER")));

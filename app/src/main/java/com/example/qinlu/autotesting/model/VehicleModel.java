@@ -2,6 +2,7 @@ package com.example.qinlu.autotesting.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 
 /**
@@ -13,70 +14,87 @@ import lombok.Setter;
 public class VehicleModel {
     @Getter
     @Setter
-    private int plateNumber;
+    @NonNull
+    private String plateNumber;
 
     @Getter
     @Setter
+    @NonNull
     private String platePrefix;
 
     @Getter
     @Setter
+    @NonNull
+    private String vehType;
+
+    @Getter
+    @Setter
+    @NonNull
     private String engineNumber;
 
     @Getter
     @Setter
+    @NonNull
     private String makeModel;
 
     @Getter
     @Setter
+    @NonNull
     private String vinNumber;
 
     @Getter
     @Setter
+    @NonNull
     private String owner;
-
-    @Getter
-    @Setter
-    private String vehType;
 
     //TODO: Might need consider to update to date type
     @Getter
     @Setter
+    @NonNull
     private String registerDate;
 
     @Getter
     @Setter
-    private String fuleType;
+    @NonNull
+    private String fuelType;
 
     @Getter
     @Setter
+    @NonNull
     private int seatNumber;
 
     @Getter
     @Setter
+    @NonNull
     private int baseWeight;
 
     @Getter
     @Setter
+    @NonNull
     private int wholeWeight;
 
     @Getter
     @Setter
+    @NonNull
     private String conditionLevel;
 
     @Getter
     @Setter
+    @NonNull
     private String lightType;
 
     @Getter
     @Setter
+    @NonNull
     private String plateType;
 
     @Getter
     @Setter
+    @NonNull
     private String licenseNumber;
 
     @Getter
     @Setter
+    @NonNull
     private String brakeType;
 }

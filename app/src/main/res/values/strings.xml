@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">车检系统</string>
+    <string name="app_name">欣和车检</string>
     <string name="btn_update">更新姓名</string>
     <string name="btn_delete">删除此检验员</string>
 
@@ -40,6 +40,7 @@
     <string name="plate_type">号牌种类</string>
     <string name="prompt_plate_type">请输入号牌种类</string>
     <string name="organization">车辆单位</string>
+    <string name="owner">车主</string>
     <string name="engine_no">发动机号</string>
     <string name="vehicle_type">车辆类型</string>
     <string name="seats_number">载质量（座位）</string>

@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -19,21 +20,32 @@ import com.example.qinlu.autotesting.model.VehicleModel;
  */
 public class InspectTabFragment2 extends Fragment{
     boolean isLoaded = false;
+    private InspectionDataBaseAdapter dbManager;
+    public CarBasicInfoModel reveivedCar;
+
+    private EditText transportationNum;
+    private EditText VIN;
+    private EditText makeModel;
+    private EditText owner;
+    private EditText engineNum;
+    private EditText seatsNum;
+    private EditText registerDate;
+    private EditText baseWeight;
+    private EditText wholeWeight;
+    private Button saveVehBtn;
+
     public String platePrefix;
     public String plateNum;
     public String plateType;
-    public CarBasicInfoModel reveivedCar;
-    private InspectionDataBaseAdapter dbManager;
-
-    EditText transportationNum;
-    private EditText VIN;
-    EditText makeModel;
-    EditText org;
-    EditText engineNum;
-    EditText seatsNum;
-    EditText registerDate;
-    EditText baseWeight;
-    EditText wholeWeight;
+    public String transportNum;
+    public String vinNum;
+    public String makeModelStr;
+    public String ownerStr;
+    public String engineNumStr;
+    public String seatsNumInt;
+    public String registerDateStr;
+    public String baseWeightStr;
+    public String wholeWeightStr;
 
     private Spinner vehicleTypeSpinner;
     private Spinner stateSpinner;
@@ -56,7 +68,7 @@ public class InspectTabFragment2 extends Fragment{
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
-                    String transportNum= transportationNum.getText().toString();
+                    transportNum= transportationNum.getText().toString();
                     if (TextUtils.isEmpty(transportNum)) {
                         transportationNum.setError(getString(R.string.error_field_required));
                     } else if (!Checker.isValidTransportNum(transportNum)){
@@ -71,7 +83,7 @@ public class InspectTabFragment2 extends Fragment{
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
 //                    Toast.makeText(getActivity(), "Not focus on VIN", Toast.LENGTH_SHORT).show();
-                    String vinNum = VIN.getText().toString();
+                    vinNum = VIN.getText().toString();
                     if (TextUtils.isEmpty(vinNum)) {
                         VIN.setError(getString(R.string.error_field_required));
                     } else if (!Checker.isValidVIN(vinNum)){
@@ -85,25 +97,25 @@ public class InspectTabFragment2 extends Fragment{
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
-                    String makModelStr = makeModel.getText().toString();
-                    if (TextUtils.isEmpty(makModelStr)) {
+                    makeModelStr = makeModel.getText().toString();
+                    if (TextUtils.isEmpty(makeModelStr)) {
                         makeModel.setError(getString(R.string.error_field_required));
-                    } else if (!Checker.isValidMakModel(makModelStr)){
+                    } else if (!Checker.isValidMakModel(makeModelStr)){
                         makeModel.setError(getString(R.string.invalid_input));
                     }
                 }
             }
         }));
-        org = (EditText) v.findViewById(R.id.organization_text);
-        org.setOnFocusChangeListener((new View.OnFocusChangeListener() {
+        owner = (EditText) v.findViewById(R.id.owner_text);
+        owner.setOnFocusChangeListener((new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
-                    String orgStr = org.getText().toString();
-                    if (TextUtils.isEmpty(orgStr)) {
-                        org.setError(getString(R.string.error_field_required));
-                    } else if (!Checker.isValidOrg(orgStr)){
-                        org.setError(getString(R.string.invalid_input));
+                    ownerStr = owner.getText().toString();
+                    if (TextUtils.isEmpty(ownerStr)) {
+                        owner.setError(getString(R.string.error_field_required));
+                    } else if (!Checker.isValidOrg(ownerStr)){
+                        owner.setError(getString(R.string.invalid_input));
                     }
                 }
             }
@@ -113,7 +125,7 @@ public class InspectTabFragment2 extends Fragment{
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
-                    String engineNumStr = engineNum.getText().toString();
+                    engineNumStr = engineNum.getText().toString();
                     if (TextUtils.isEmpty(engineNumStr)) {
                         engineNum.setError(getString(R.string.error_field_required));
                     } else if (!Checker.isValidEngineNum(engineNumStr)){
@@ -133,6 +145,7 @@ public class InspectTabFragment2 extends Fragment{
                     } else if (!Checker.isValidSeatsNumStr(seatsNumStr)){
                         seatsNum.setError(getString(R.string.invalid_input));
                     }
+            //        seatsNumInt = Integer.valueOf(seatsNumStr);
                 }
             }
         }));
@@ -141,9 +154,9 @@ public class InspectTabFragment2 extends Fragment{
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
-                    String registerDateStr = registerDate.getText().toString();
+                    registerDateStr = registerDate.getText().toString();
                     if (TextUtils.isEmpty(registerDateStr)) {
-                        org.setError(getString(R.string.error_field_required));
+                        registerDate.setError(getString(R.string.error_field_required));
                     } else if (!Checker.isValidRegisterDate(registerDateStr)){
                         registerDate.setError(getString(R.string.invalid_input));
                     }
@@ -155,7 +168,7 @@ public class InspectTabFragment2 extends Fragment{
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
-                    String baseWeightStr = baseWeight.getText().toString();
+                    baseWeightStr = baseWeight.getText().toString();
                     if (TextUtils.isEmpty(baseWeightStr)) {
                         baseWeight.setError(getString(R.string.error_field_required));
                     } else if (!Checker.isValidBaseWeight(baseWeightStr)){
@@ -169,7 +182,7 @@ public class InspectTabFragment2 extends Fragment{
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
-                    String wholeWeightStr = wholeWeight.getText().toString();
+                    wholeWeightStr = wholeWeight.getText().toString();
                     if (TextUtils.isEmpty(wholeWeightStr)) {
                         wholeWeight.setError(getString(R.string.error_field_required));
                     } else if (!Checker.isValidWholeWeight(wholeWeightStr)){
@@ -178,6 +191,29 @@ public class InspectTabFragment2 extends Fragment{
                 }
             }
         }));
+        saveVehBtn = (Button) v.findViewById(R.id.save_veh);
+        saveVehBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveVehcle();
+            }
+            // TODO: 添加车辆保存逻辑
+            private void saveVehcle() {
+                VehicleModel curVeh = new VehicleModel();
+                curVeh.setPlateNumber(plateNum);
+                curVeh.setPlatePrefix(platePrefix);
+                curVeh.setPlateType(plateType);
+                curVeh.setEngineNumber(engineNum.getText().toString());
+                curVeh.setMakeModel(makeModel.getText().toString());
+                curVeh.setVinNumber(VIN.getText().toString());
+                curVeh.setOwner(owner.getText().toString());
+                curVeh.setRegisterDate(registerDate.getText().toString());
+                curVeh.setFuelType(fuelTypeSpinner.getSelectedItem().toString());
+//                curVeh.setSeatNumber(seatsNumStr);
+                //dbManager.insertVehicle(curVeh);
+                Toast.makeText(getActivity(), "车辆信息已保存", Toast.LENGTH_SHORT).show();
+            }
+        });
         return v;
     }
 

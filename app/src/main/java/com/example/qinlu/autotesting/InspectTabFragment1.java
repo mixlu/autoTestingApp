@@ -52,7 +52,7 @@ public class InspectTabFragment1 extends Fragment{
                 if (!hasFocus) {
                     if (TextUtils.isEmpty(plateNum.getText().toString())) {
                         plateNum.setError(getString(R.string.error_field_required));
-                    } else if ( !plateNum.getText().toString().matches("\\\\b[a-zA-Z0-9]{5}\\\\b") ) {
+                    } else if ( !plateNum.getText().toString().matches("^[a-zA-z0-9]{4}[A-Z0-9挂学警港澳]{1}$") ) {
                         Toast.makeText(getActivity(), plateNum.getText().toString(), Toast.LENGTH_SHORT).show();
                         plateNum.setError("车牌号码格式不正确");
                     }
